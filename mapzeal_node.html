@@ -1,5 +1,6 @@
 <head>
   <title>mapzeal_node</title>
+  <h1>Mapzeal</h1>
 </head>
 
 <body>
@@ -12,4 +13,22 @@
 <template name="hello">
   <button>Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="main">
+    {{> alert}}
+    {{#unless resetPassword}}
+        {{#unless currentUser}}
+            {{#unless showForgotPassword}}
+                {{> signIn}}
+                {{> signUp}}
+            {{else}}
+                {{> forgotPassword}}
+            {{/unless}}
+        {{else}}
+            {{> signOut}}
+        {{/unless}}
+    {{else}}
+        {{> resetPassword}}
+    {{/unless}}
 </template>
