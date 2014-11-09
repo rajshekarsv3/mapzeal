@@ -10,4 +10,5 @@ accounts-ui
 accounts-base
 accounts-password
 foundation
-
+accounts-facebook
+accounts-google

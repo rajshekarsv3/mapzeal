@@ -9,7 +9,7 @@ header
 {
 	width:100%;
 	background-color: white;
-	height: 100px;
+	height: 63px;
 	overflow: visible;
 	display: block;
 }
@@ -48,9 +48,9 @@ color:rgb(11, 152, 93);
 
 .top-bar-logo
 {
+	background-image: url("/mapzeal_logo.jpg"),none;
 	background-repeat: no-repeat;
-	height: 100px;
-	width: 100px; 
+	background-color: blue;
 }
 
 .nav-bar
@@ -63,7 +63,7 @@ position: relative;
 
 .top-bar-section ul
 {
-	margin-top: 1.5em;
+	margin-top: 0.5em;
 }
 
 .cell

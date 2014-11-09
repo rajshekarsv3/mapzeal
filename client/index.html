@@ -1,0 +1,78 @@
+<head>
+  <title>mapzeal_node</title>
+</head>
+
+<body>
+  <div class="main">
+<!--<nav id="site-navigation">
+<ol class="nav-list">
+<li class="nav-item list-item"><a class="nav-item-link list-item-link">Register/Sign Up</a></li>
+<li class="nav-item list-item"><a class="nav-item-link list-item-link">Login</a></li>
+</ol>
+</nav>-->
+<header>
+  <div class="nav-bar">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+       
+      <li class="name">
+        <h1>
+         <div id="logo">
+        <a><img class="top-bar-logo" src="images/mapzeal_logo.jpg" />         
+        </a>
+    </div>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+ 
+    <section class="top-bar-section">  
+      <ul class="right">
+        <li><a href="#">Courses</a></li>                
+        <li><a href="#">Register/Sign Up</a></li>        
+        <li><a href="#">Login</a></li>
+      </ul>
+    </section>
+  </nav>
+  </div>
+  </header>
+  <div class="cell well tci main-content">
+    <div class="mbm mbl--m pts tac">
+      <h1 class="mbf tci">Online learning platform for social studies</h1>
+    </div>
+    <div class="content">
+  <div class="update-zeal">
+    <div class="update-zeal-disp">
+    <div class="update-zeal-change">
+    <h1 style="font-family:'Gotham Rounded A', 'Gotham Rounded B', sans-serif;">Experience the fun interactive way of learning</h1>
+    </div>
+    </div>
+  </div>
+  </div>
+   </div>
+</div>
+  {{> loginButtons}}
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="main">
+    {{> alert}}
+    {{#unless resetPassword}}
+        {{#unless currentUser}}
+            {{#unless showForgotPassword}}
+                {{> signIn}}
+                {{> signUp}}
+            {{else}}
+                {{> forgotPassword}}
+            {{/unless}}
+        {{else}}
+            {{> signOut}}
+        {{/unless}}
+    {{else}}
+        {{> resetPassword}}
+    {{/unless}}
+</template>
