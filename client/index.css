@@ -1,0 +1,277 @@
+.main { /* fallback */ 
+background: rgb(59, 86, 110);
+	width:100%;
+	font-family: Helvetica, Arial, Sans-Serif;
+	min-height: 40em;
+}
+header
+{
+	width:100%;
+	background-color: white;
+	height: 100px;
+	overflow: visible;
+	display: block;
+}
+#login-buttons a
+{
+text-decoration: none;
+}
+
+#login-buttons .configure-button
+{
+	background:rgb(11, 152, 93);
+	border-color: rgb(11, 152, 93);
+}
+#login-buttons .configure-button:active, #login-buttons .configure-button:hover
+{
+	background: rgba(17, 78, 137, 0.73);
+	border-color:rgba(17, 78, 137, 0.73);
+}
+.top-bar
+{
+	height:63px;
+	background-color:white;
+	line-height: 45px;
+}
+
+.top-bar-section
+{
+	background-color: white;
+}
+.top-bar-section li:not(.has-form) a:not(.button) {
+	background-color: white;
+}
+.top-bar-section ul li>a
+{
+	color: rgb(62, 148, 192);
+	font-weight: bold;
+}
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+background: #ffffff;
+color:rgb(11, 152, 93);
+}
+
+
+.top-bar-section ul li
+{
+	background-color: white;
+}
+.top-bar-section ul li>a{
+	height: 1em;
+}
+
+.top-bar-logo
+{
+	background-repeat: no-repeat;
+	background-color: blue;
+	height:120px;
+	width: 120px;
+	opacity: 2;
+	-webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+     box-shadow: 0 8px 6px -6px black;
+}
+
+.nav-bar
+{
+	margin-left: auto;
+margin-right: auto;
+max-width: 75em;
+position: relative;
+}
+
+.top-bar-section ul
+{
+	margin-top: 1.5em;
+	margin-right: 3em;
+}
+
+.cell
+{
+margin-left: auto;
+margin-right: auto;
+max-width: 75em;
+position: relative;
+}
+.well
+{
+	margin-bottom: 1.25em;
+margin-top: 1.25em;
+
+}
+
+.tci
+{
+	color: white;
+	font-weight: bold;
+
+}
+
+.tac
+{
+	text-align: center;
+}
+.pts
+{
+	padding-top: 0.625em;
+}
+.mbl--m {
+margin-bottom: 2.5em;
+}
+div
+{
+	display: block;
+}
+.mbm
+{
+	margin-bottom: 1.25em;
+}
+.mbf{
+	margin-bottom: 0;
+}
+h1
+{
+	font-size: 200%;
+}
+
+.update-zeal
+{
+	width:50%;
+	box-sizing: border-box;
+	float: left;
+	margin-top: 4em;
+	padding-left: 15px;
+	padding-right: 15px;	
+	height: 400px;
+}
+
+.update-zeal-disp
+{
+	background: #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+	padding: 0.3125em;
+	background-color: white;
+	border-radius: 3px;
+	position: relative;
+	height: 50%;
+		-webkit-stroke-width: 5.3px;
+   -webkit-stroke-color: #FFFFFF;
+   -webkit-fill-color: #FFFFFF;
+   text-shadow: 1px 0px 20px black;
+   -webkit-transition: width 0.3s; /*Safari & Chrome*/
+   transition: width 0.3s;
+   -moz-transition: width 0.3s; /* Firefox 4 */
+   -o-transition: width 0.3s; /* Opera */
+  -webkit-box-shadow:0 0 20px black; 
+-moz-box-shadow: 0 0 20px black; 
+box-shadow:0 0 20px black;
+
+}
+
+.update-zeal-change
+{
+	margin: 3px;
+	background-color: rgba(55, 71, 82, 1);
+	height:96.5%;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;	
+}
+.update-zeal-change h1
+{	
+	color: white;
+	font-weight: bold;
+	padding: 5px;
+	padding-top: 1em;
+	text-rendering: optimizeLegibility !important;
+-webkit-font-smoothing: antialiased !important;
+}
+
+
+.content
+{
+	display: block;
+margin-left: -15px;
+margin-right: -15px;
+margin-bottom: 5em;
+}
+
+.feature-zeal
+{
+width: 50%;
+float: left;
+box-sizing:border-box;
+margin: 0;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+.feature-zeal p
+{
+	font-size: 130%;
+	font-family: "OpenSansLight",Helvetica,Arial,sans-serif;
+	margin-top: 4.5em;
+	margin-bottom: 1.25em;
+}
+
+.course-highlight
+{
+	list-style-type: none;
+margin: 0;
+padding: 0;
+display: block;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}
+
+
+.list-item--label
+{
+	list-style-type: none;
+	margin-top: 0.3125em;
+	font-size: 85%;
+font-weight: bold;
+margin-right: 1.25em;
+float: left;
+margin-bottom: 0.625em;
+text-transform: uppercase;
+}
+
+.list-item
+{
+	display: block;
+}
+.tag {
+background: #d9d7d5;
+border: 0;
+border-radius: 3px;
+font-size: 75%;
+font-weight: bold;
+padding: 0.7em 0.9375em;
+text-transform: uppercase;
+z-index: 2;
+}
+.tag--history
+{
+background: rgb(50, 44, 44);;
+color: white;
+}
+
+.list-item a
+{
+color: white;
+text-decoration: none;
+-webkit-transition: 0.2s ease-in-out;
+transition: 0.2s ease-in-out;
+}
+
+.list-item a:hover
+{
+	color:white;
+	background: darkgray;
+	-webkit-box-shadow:0 0 20px black; 
+-moz-box-shadow: 0 0 20px black; 
+box-shadow:0 0 20px black;
+}
