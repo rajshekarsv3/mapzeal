@@ -29,7 +29,7 @@
     <section class="top-bar-section">  
       <ul class="right">
         <li><a href="#">Courses</a></li>                
-        <li><a href="#">Register/Sign Up</a></li>        
+        <li><a>{{> loginButtons}}</a></li>       
         <li><a href="#">Login</a></li>
       </ul>
     </section>
@@ -51,7 +51,7 @@
   </div>
    </div>
 </div>
-  {{> loginButtons}}
+  
 </body>
 
 <template name="hello">
@@ -59,7 +59,7 @@
   <p>You've pressed the button {{counter}} times.</p>
 </template>
 
-<template name="main">
+<template name="register">
     {{> alert}}
     {{#unless resetPassword}}
         {{#unless currentUser}}
