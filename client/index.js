@@ -7,7 +7,7 @@
   });
 
 
-  Template.hello.helpers({
+/*  Template.hello.helpers({
     counter: function () {
       return Session.get("counter");
     }
@@ -18,4 +18,4 @@
       // increment the counter when button is clicked
       Session.set("counter", Session.get("counter") + 1);
     }
-  });
+  });*/
