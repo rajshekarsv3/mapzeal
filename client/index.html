@@ -27,60 +27,53 @@
     <section class="top-bar-section">  
       <ul class="right">
         <li><a>Courses</a></li>                
-        <li><a>Create Free Account</a></li>       
-        <li><a>Login</a></li>
+        <li><a class='authentication_triggers' data-active-template="sign_up">Create Free Account</a></li>       
+        <li><a class='authentication_triggers' data-active-template="sign_in">Login</a></li>
       </ul>
     </section>
   </nav>
   </div>
   </header>
-  <div class="cell well tci main-content">
-    <div class="mbm mbl--m pts tac">
-      <h1 class="mbf tci">Online learning platform for social studies</h1>
-    </div>
-    <div class="content">
-  <div class="update-zeal">
-    <div class="update-zeal-disp">
-    <div class="update-zeal-change">
-    <h1>Experience the fun interactive way of learning</h1>
-    </div>
-    </div>
+  {{> display_content}}
   </div>
-  <div class="feature-zeal">
-    <p>MapZeal- A different platform for Aspirants to gain knowledge through maps.Different and Innovative</p>
-    <ul class="course-highlight">
-    <li class="list-item list-item--label">LEARN:</li>
-    <li class="list-item list-item--label"><a class="tag tag--history" href="# ">History</a></li>
-    <li class="list-item list-item--label"><a class="tag tag--history" href="# ">Geography</a></li>
-    <li class="list-item list-item--label"><a class="tag tag--history" href="# ">Politics</a></li>
-    <li class="list-item list-item--label"><a class="tag tag--history" href="# ">Leaders</a></li>
-    </ul>
-  </div>
-  </div>
-   </div>
-</div>
+  
   
 </body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="display_content">
+  {{> UI.dynamic template=activeTemplate}}
+</template>
+<template name="index_content">
+  <div class="cell well tci main-content">
+      <div class="mbm mbl--m pts tac">
+        <h1 class="mbf tci">Online learning platform for social studies</h1>
+      </div>
+      <div class="content">
+    <div class="update-zeal">
+      <div class="update-zeal-disp">
+      <div class="update-zeal-change">
+      <h1>Experience the fun interactive way of learning</h1>
+      </div>
+      </div>
+    </div>
+    <div class="feature-zeal">
+      <p>MapZeal- A different platform for Aspirants to gain knowledge through maps.Different and Innovative</p>
+      <ul class="course-highlight">
+      <li class="list-item list-item--label">LEARN:</li>
+      <li class="list-item list-item--label"><a class="tag tag--history" href="# ">History</a></li>
+      <li class="list-item list-item--label"><a class="tag tag--history" href="# ">Geography</a></li>
+      <li class="list-item list-item--label"><a class="tag tag--history" href="# ">Politics</a></li>
+      <li class="list-item list-item--label"><a class="tag tag--history" href="# ">Leaders</a></li>
+      </ul>
+    </div>
+    </div>
+     </div>
+  
 </template>
 
-<template name="register">
-    {{> alert}}
-    {{#unless resetPassword}}
-        {{#unless currentUser}}
-            {{#unless showForgotPassword}}
-                {{> signIn}}
-                {{> signUp}}
-            {{else}}
-                {{> forgotPassword}}
-            {{/unless}}
-        {{else}}
-            {{> signOut}}
-        {{/unless}}
-    {{else}}
-        {{> resetPassword}}
-    {{/unless}}
+<template name="sign_in">
+Sign In
+</template>
+
+<template name="sign_up">
+   Sign Up
 </template>
