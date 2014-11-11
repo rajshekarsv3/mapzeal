@@ -71,14 +71,88 @@
 </template>
 
 <template name="sign_in">
-{{> loginButtons}}
+    <fieldset>
+        <legend>Sign In</legend>
+          <div class="row">
+            <div class="small-8 columns">
+              <div class="row">
+                
+                <div class="small-9 columns">
+                  <label>Username/Email
+                    <input type="text" placeholder="Email or Username">
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                
+                <div class="small-9 columns">
+                  <label>Password
+                    <input type="password" placeholder="Password">
+                  </label>
+                </div>
+                
+              </div>
+              <div class="row"><a>?forgot your password</a></div>
+            </div>
+            
+        </div>
+        <div class="row"><a class="button">Sign In</a></div>
+        <div class="row">Dont have a account ? <a class='authentication_triggers' data-active-template="sign_up">create a free account</a></div>
+        <div class="row">
+        Sign In With : {{> otherLoginOptions}}
+        </div>
+    </fieldset>
+
+      
+    
 </template>
 
 <template name="sign_up">
-   Sign Up
+    <fieldset>
+        <legend>Create Free Account</legend>
+        <div class="row">
+            <div class="small-8 columns">
+              <div class="row">
+                
+                <div class="small-9 columns">
+                  <label>Your email address
+                    <input type="text" placeholder="">
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                
+                <div class="small-9 columns">
+                  <label>Choose a user name
+                    <input type="text" placeholder="">
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                
+                <div class="small-9 columns">
+                  <label>Choose a Password
+                    <input type="password" placeholder="">
+                  </label>
+                </div>
+                
+              </div>
+              <div class="row"><input type="checkbox" >Show Password</div>
+            </div>
+            
+        </div>
+        <div class="row"><a class="button">CREATE FREE ACCOUNT</a></div>
+        <div class="row">
+        Sign up With : {{> otherLoginOptions}}
+        </div>
+        <div class="row">already having account ? <a class='authentication_triggers' data-active-template="sign_in">sign in </a></div>
+    </fieldset>
 </template>
 
+<template name="otherLoginOptions">
+</template>
 
+<!--
 <template name="loginButtons">
   <div id="login-buttons" class="login-buttons-dropdown-align-{{align}}">
     {{#if currentUser}}
@@ -133,9 +207,10 @@
   {{else}}
     <div class="no-services">No login services configured</div>
   {{/if}}
-</template>
+</template> -->
 
 <!-- used in various places to display messages to user -->
+<!--
 <template name="_loginButtonsMessages">
   {{#if errorMessage}}
     <div class="message error-message">{{errorMessage}}</div>
@@ -163,4 +238,4 @@
     {{! just add some padding }}
     <div class="login-buttons-padding"></div>
   {{/unless}}
-</template>
+</template>-->
