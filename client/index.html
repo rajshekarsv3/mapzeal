@@ -3,8 +3,7 @@
 </head>
 
 <body>
-  <div class="main">
-<!--<nav id="site-navigation">
+  <div class="main"><!--<nav id="site-navigation">
 <ol class="nav-list">
 <li class="nav-item list-item"><a class="nav-item-link list-item-link">Register/Sign Up</a></li>
 <li class="nav-item list-item"><a class="nav-item-link list-item-link">Login</a></li>
@@ -27,18 +26,36 @@
  
     <section class="top-bar-section">  
       <ul class="right">
-        <li><a href="#">Courses</a></li>                
-        <li><a>{{> loginButtons}}</a></li>       
-        <li><a href="#">Login</a></li>
+        <li><a>Courses</a></li>                
+        <li><a class='authentication_triggers' data-active-template="sign_up">Create Free Account</a></li>       
+        <li><a class='authentication_triggers' data-active-template="sign_in">Login</a></li>
       </ul>
     </section>
   </nav>
   </div>
   </header>
+  {{> display_content}}
+  </div>
+  
+  
+</body>
+<template name="display_content">
+  {{> UI.dynamic template=activeTemplate}}
+</template>
+<template name="index_content">
   <div class="cell well tci main-content">
-    <div class="mbm mbl--m pts tac">
-      <h1 class="mbf tci">Online learning platform for social studies</h1>
+      <div class="mbm mbl--m pts tac">
+        <h1 class="mbf tci">Online learning platform for social studies</h1>
+      </div>
+      <div class="content">
+    <div class="update-zeal">
+      <div class="update-zeal-disp">
+      <div class="update-zeal-change">
+      <h1>Experience the fun interactive way of learning</h1>
+      </div>
+      </div>
     </div>
+<<<<<<< HEAD
     <div class="row">
     <div class="large-12 columns">
       <div class="row">
@@ -64,28 +81,114 @@
   </div></div></div>
    </div>
 </div>
+=======
+    <div class="feature-zeal">
+      <p>MapZeal- A different platform for Aspirants to gain knowledge through maps.Different and Innovative</p>
+      <ul class="course-highlight">
+      <li class="list-item list-item--label">LEARN:</li>
+      <li class="list-item list-item--label"><a class="tag tag--history" href="# ">History</a></li>
+      <li class="list-item list-item--label"><a class="tag tag--history" href="# ">Geography</a></li>
+      <li class="list-item list-item--label"><a class="tag tag--history" href="# ">Politics</a></li>
+      <li class="list-item list-item--label"><a class="tag tag--history" href="# ">Leaders</a></li>
+      </ul>
+    </div>
+    </div>
+     </div>
+>>>>>>> 2bac752f45ab8582231f6fa4682bf2a8833f74cc
   
-</body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
 </template>
 
-<template name="register">
-    {{> alert}}
-    {{#unless resetPassword}}
-        {{#unless currentUser}}
-            {{#unless showForgotPassword}}
-                {{> signIn}}
-                {{> signUp}}
-            {{else}}
-                {{> forgotPassword}}
-            {{/unless}}
+<template name="sign_in">
+{{> loginButtons}}
+</template>
+
+<template name="sign_up">
+   Sign Up
+</template>
+
+
+<template name="loginButtons">
+  <div id="login-buttons" class="login-buttons-dropdown-align-{{align}}">
+    {{#if currentUser}}
+      {{#if loggingIn}}
+        {{! We aren't actually logged in yet; we're just setting Meteor.userId
+            optimistically during an at-startup login-with-token. We expose this
+            state so other UIs can treat it specially, but we'll just treat it
+            as logged out. }}
+        {{#if dropdown}}
+          {{> _loginButtonsLoggingIn }}
         {{else}}
-            {{> signOut}}
-        {{/unless}}
+          <div class="login-buttons-with-only-one-button">
+            {{> _loginButtonsLoggingInSingleLoginButton }}
+          </div>
+        {{/if}}
+      {{else}}
+        {{> _loginButtonsLoggedIn}}
+      {{/if}}
     {{else}}
-        {{> resetPassword}}
-    {{/unless}}
+      {{> _loginButtonsLoggedOut}}
+    {{/if}}
+  </div>
+</template>
+
+<template name="_loginButtonsLoggedIn">
+  {{#if dropdown}}
+    {{> _loginButtonsLoggedInDropdown}}
+  {{else}}
+    <div class="login-buttons-with-only-one-button">
+      {{> _loginButtonsLoggedInSingleLogoutButton}}
+    </div>
+  {{/if}}
+</template>
+
+<template name="_loginButtonsLoggedOut">
+  {{#if services}} {{! if at least one service is configured }}
+    {{#if configurationLoaded}}
+      {{#if dropdown}} {{! if more than one service configured, or password is configured}}
+        {{> _loginButtonsLoggedOutDropdown}}
+      {{else}}
+        {{#with singleService}} {{! at this point there must be only one configured services }}
+          <div class="login-buttons-with-only-one-button">
+            {{#if loggingIn}}
+              {{> _loginButtonsLoggingInSingleLoginButton}}
+            {{else}}
+              {{> _loginButtonsLoggedOutSingleLoginButton}}
+            {{/if}}
+          </div>
+        {{/with}}
+      {{/if}}
+    {{/if}}
+  {{else}}
+    <div class="no-services">No login services configured</div>
+  {{/if}}
+</template>
+
+<!-- used in various places to display messages to user -->
+<template name="_loginButtonsMessages">
+  {{#if errorMessage}}
+    <div class="message error-message">{{errorMessage}}</div>
+  {{/if}}
+  {{#if infoMessage}}
+    <div class="message info-message">{{infoMessage}}</div>
+  {{/if}}
+</template>
+
+<template name="_loginButtonsLoggingIn">
+  {{> _loginButtonsLoggingInPadding}}
+  <div class="loading">&nbsp;</div>
+  {{> _loginButtonsLoggingInPadding}}
+</template>
+
+<template name="_loginButtonsLoggingInPadding">
+  {{#unless dropdown}}
+    {{! invisible div used for correct height of surrounding div. this ensures
+        that the _loginButtons template is always the same height
+        and the rest of the page doesn't move up and down }}
+    <div class="login-buttons-padding">
+      <div class="login-button single-login-button" style="visibility: hidden;" id="login-buttons-logout">&nbsp;</div>
+    </div>
+  {{else}}
+    {{! just add some padding }}
+    <div class="login-buttons-padding"></div>
+  {{/unless}}
 </template>

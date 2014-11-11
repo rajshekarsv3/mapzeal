@@ -6,9 +6,10 @@
 meteor-platform
 autopublish
 insecure
-accounts-ui
 accounts-base
 accounts-password
 foundation
 accounts-facebook
 accounts-google
+accounts-ui-unstyled
+
