@@ -8,7 +8,7 @@ header
 {
 	width:100%;
 	background-color: white;
-	height: 100px;
+	height:70px;
 	overflow: visible;
 	display: block;
 }
@@ -57,7 +57,7 @@ color:rgb(11, 152, 93);
 	background-color: white;
 }
 .top-bar-section ul li>a{
-	height: 1em;
+	height:1em;
 }
 
 .top-bar-logo
@@ -82,7 +82,7 @@ position: relative;
 
 .top-bar-section ul
 {
-	margin-top: 1.5em;
+	margin-top: 0.9em;
 	margin-right: 3em;
 }
 
@@ -274,4 +274,14 @@ transition: 0.2s ease-in-out;
 	-webkit-box-shadow:0 0 20px black; 
 -moz-box-shadow: 0 0 20px black; 
 box-shadow:0 0 20px black;
+}
+
+@media screen and(min-width: 48em)
+{
+	.update-zeal
+	{
+		position: relative;
+		width:50%;
+		height: 400px;
+	}
 }
