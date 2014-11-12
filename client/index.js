@@ -10,7 +10,7 @@
   });
   Meteor.startup(function(){
       $(".authentication_triggers").click(function(event){
-          
+          console.log("hi");
           Session.set('current_template', $(event.target).data("activeTemplate"));
           
         });
