@@ -23,12 +23,13 @@
       <li class="toggle-topbar menu-icon"><a href="#"><span class="menu"></span></a></li>
     </ul>
  
-    <section class="top-bar-section">  
-      <ul class="right">
-        <li><a>Courses</a></li>                
-        <li><a class='authentication_triggers' data-active-template="sign_up">Create Free Account</a></li>       
-        <li><a class='authentication_triggers' data-active-template="sign_in">Login</a></li>
-      </ul>
+    <section class="top-bar-section"> 
+      {{#if currentUser}}
+        {{> userRightBar}}
+      {{else}}
+        {{> normalRightBar}} 
+      {{/if}}
+
     </section>
   </nav>
   
@@ -36,6 +37,29 @@
   
   
 </body>
+<template name="normalRightBar">
+    <ul class="right">
+      <li>{{> courses}}</li>                
+      <li>{{> create_account}}</li>       
+      <li>{{> login}}</li>
+    </ul>
+</template>
+<template name="userRightBar">
+    <ul class="right">
+      <li>{{> courses}}</li>                
+      <li></li>       
+      <li></li>
+    </ul>
+</template>
+<template name="courses">
+  <a>Courses</a>
+</template>
+<template name="create_account">
+  <a class='authentication_triggers' data-active-template="sign_up">Create Free Account</a>
+</template>
+<template name="login">
+  <a class='authentication_triggers' data-active-template="sign_in">Login</a>
+</template>
 <template name="display_content">
   {{> UI.dynamic template=activeTemplate}}
 </template>
@@ -83,7 +107,7 @@
                 
                 <div class="small-9 columns">
                   <label class="lbl-email">Username/Email
-                    <input type="text" placeholder="Email or Username">
+                    <input id="username" type="text" placeholder="Email or Username">
                   </label>
                 </div>
               </div>
@@ -91,7 +115,7 @@
                 
                 <div class="small-9 columns">
                   <label class="lbl-pwd">Password
-                    <input type="password" placeholder="Password">
+                    <input id="password" type="password" placeholder="Password">
                   </label>
                 </div>
                 
@@ -100,8 +124,8 @@
             </div>
             
         </div>
-        <div class="row"><a class="button">Sign In</a></div>
-        <div class="row">Dont have a account ? <a class='authentication_triggers' data-active-template="sign_up">create a free account</a></div>
+        <div class="row"><a id='btn_sign_in' class="button">Sign In</a></div>
+        <div class="row">Dont have a account ? {{> create_account}}</div>
         <div class="row">
         Sign In With : {{> otherLoginOptions}}
         </div>
@@ -149,7 +173,7 @@
         <div class="row">
         Sign up With : {{> otherLoginOptions}}
         </div>
-        <div class="row">already having account ? <a class='authentication_triggers' data-active-template="sign_in">sign in </a></div>
+        <div class="row">already having account ? {{> login}}</div>
     </fieldset>
 </template>
 
