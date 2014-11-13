@@ -47,7 +47,7 @@ text-decoration: none;
 
 #login-buttons a:hover
 {
-	color:rgb(11, 152, 93)
+	color:rgb(11, 152, 93);
 }
 
 #login-buttons .configure-button
@@ -60,17 +60,36 @@ text-decoration: none;
 	padding-left: 4px;
 }
 
+.lbl-email,.lbl-pwd
+{
+color: white;
+}
+
+fieldset
+{
+	-webkit-box-shadow:0 0 20px black; 
+	-moz-box-shadow: 0 0 20px black; 
+	box-shadow:0 0 20px black;
+	margin: 1.25rem 1em; 	
+}
+
+fieldset legend
+{
+	border-radius: 4px;
+	color:rgb(11, 152, 93);
+}
+
 .login-link-and-dropdown-list 
 {
 	background: white;
 	width:50em;
 	padding: 2em;
 	-webkit-box-shadow:0 0 20px black; 
--moz-box-shadow: 0 0 20px black; 
-box-shadow:0 0 20px black;
-position: relative;
--webkit-transition: 0.2s ease-in-out;
-transition: 0.2s ease-in-out;
+	-moz-box-shadow: 0 0 20px black; 
+	box-shadow:0 0 20px black;
+	position: relative;
+	-webkit-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
 
 }
 #login-buttons .configure-button:active, #login-buttons .configure-button:hover
@@ -92,11 +111,9 @@ transition: 0.2s ease-in-out;
 
 @media screen and (max-width: 50em)
 {
-	.login-link-and-dropdown-list
-	{		
-		position: relative;
-		width:20em;	
-		padding: 1em;
+	.lbl-email input,.lbl-pwd input
+	{				
+		width:15em;			
 	}
 	#login-buttons .configure-button
 	{
