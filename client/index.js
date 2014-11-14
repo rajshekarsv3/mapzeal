@@ -8,19 +8,34 @@
 
     passwordSignupFields: 'USERNAME_AND_EMAIL'
   });
-  Meteor.startup(function(){
-      $(".authentication_triggers").click(function(event){
-          console.log("hi");
-          Session.set('current_template', $(event.target).data("activeTemplate"));
-          
-        });
-  });
+
 
   Template.display_content.helpers({
       activeTemplate: function(){
         return  Session.get('current_template');
       }
     });
+  Template.create_account.events({
+    'click .authentication_triggers': function(){
+        console.log(Meteor.user());
+        Session.set('current_template', $(event.target).data("activeTemplate"));
+    }
+  });
+  Template.login.events({
+    'click .authentication_triggers': function(){
+        console.log("hi");
+        Session.set('current_template', $(event.target).data("activeTemplate"));
+    }
+  });
+  Template.sign_in.events({
+    'click #btn_sign_in': function(){
+      var username = $("#username").val();
+      var password = $("#password").val();
+      Meteor.loginWithPassword(username,password,function(){
+        Session.set("current_template", "index_content");
+      });
+    }
+  });
 
 
   // for convenience
