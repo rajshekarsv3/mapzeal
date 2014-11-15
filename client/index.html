@@ -47,8 +47,8 @@
 <template name="userRightBar">
     <ul class="right">
       <li>{{> courses}}</li>                
-      <li></li>       
-      <li></li>
+      <li><a>{{displayName}}</a></li>       
+      <li><a id="btn_logout">logout</a></li>
     </ul>
 </template>
 <template name="courses">
@@ -144,7 +144,7 @@
                 
                 <div class="small-9 columns">
                   <label class="lbl-email">Your email address
-                    <input type="text" placeholder="">
+                    <input id='sign_up_email' type="text" placeholder="">
                   </label>
                 </div>
               </div>
@@ -152,7 +152,7 @@
                 
                 <div class="small-9 columns">
                   <label class="lbl-email">Choose a user name
-                    <input type="text" placeholder="">
+                    <input id='sign_up_username' type="text" placeholder="">
                   </label>
                 </div>
               </div>
@@ -160,16 +160,16 @@
                 
                 <div class="small-9 columns">
                   <label class="lbl-pwd">Choose a Password
-                    <input type="password" placeholder="">
+                    <input id='sign_up_password' type="password" placeholder="">
                   </label>
                 </div>
                 
               </div>
-              <div class="row"><input type="checkbox" >Show Password</div>
+              <div class="row"><input id='show_password' type="checkbox" >Show Password</div>
             </div>
             
         </div>
-        <div class="row"><a class="button">CREATE FREE ACCOUNT</a></div>
+        <div class="row"><a id="btn_sign_up" class="button">CREATE FREE ACCOUNT</a></div>
         <div class="row">
         Sign up With : {{> otherLoginOptions}}
         </div>
