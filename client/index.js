@@ -209,6 +209,12 @@ Template._loginButtonsMessages.helpers({
 Template._loginButtonsLoggingInPadding.helpers({
   dropdown: dropdown
 });
+
+$(document).ready(function(){
+
+        
+});
+
 /*  Template.hello.helpers({
     counter: function () {
       return Session.get("counter");
@@ -221,3 +227,4 @@ Template._loginButtonsLoggingInPadding.helpers({
       Session.set("counter", Session.get("counter") + 1);
     }
   });*/
+

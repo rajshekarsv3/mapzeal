@@ -12,11 +12,18 @@ header
 }
 
 /* Navigation CSS */
+
 .top-bar
 {
 	height:61px;
 	background-color:white;
 	line-height: 45px;
+}
+
+legend
+{
+	-webkit-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
 }
 
 .top-bar-section
@@ -80,6 +87,7 @@ background: #FFF;
 {
 	-webkit-transition: 0.2s ease-in-out;
 transition: 0.2s ease-in-out;
+padding: 12px;
 }
 
 .top-bar-section ul
@@ -133,6 +141,10 @@ fieldset legend
 {
 	border-radius: 4px;
 	color:rgb(11, 152, 93);
+	height: 2em;
+	padding-top: 3px;
+	-webkit-box-shadow:0 0 20px black; 
+	-moz-box-shadow: 0 0 20px black; 
 }
 
 .login-link-and-dropdown-list 

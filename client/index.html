@@ -20,7 +20,7 @@
     </div>
         </h1>
       </li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span class="menu"></span></a></li>
+      <li class="toggle-topbar menu-icon"><a href="#" id="menu"><span class="menu"></span></a></li>
     </ul>
  
     <section class="top-bar-section"> 
@@ -38,7 +38,7 @@
   
 </body>
 <template name="normalRightBar">
-    <ul class="right">
+    <ul class="right" id="menu-list">
       <li>{{> courses}}</li>                
       <li>{{> create_account}}</li>       
       <li>{{> login}}</li>
