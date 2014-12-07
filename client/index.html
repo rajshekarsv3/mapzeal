@@ -10,7 +10,7 @@
 </ol>
 </nav>-->
 
-  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+  <nav class="top-bar small-12 small-centered columns" data-topbar role="navigation" data-options="sticky_on: large">
     <ul class="title-area">       
       <li class="name">
         <h1>
@@ -34,28 +34,35 @@
   </nav>
   
   {{> display_content}}
+
+  {{> footer_content}}
   
   
 </body>
 <template name="normalRightBar">
     <ul class="right" id="menu-list">
-      <li>{{> courses}}</li>                
+      <li>{{> learn}}</li> 
+      <li>{{> teach}}</li>
       <li>{{> create_account}}</li>       
       <li>{{> login}}</li>
     </ul>
 </template>
 <template name="userRightBar">
     <ul class="right">
-      <li>{{> courses}}</li>                
-      <li></li>       
-      <li></li>
+      <li>{{> learn}}</li>
+      <li>{{> teach}}</li>               
+      <li><a>{{displayName}}</a></li>       
+      <li><a id="btn_logout">logout</a></li>
     </ul>
 </template>
-<template name="courses">
-  <a>Courses</a>
+<template name="learn">
+  <a>Learn</a>
+</template>
+<template name="teach">
+<a>Teach</a>
 </template>
 <template name="create_account">
-  <a class='authentication_triggers' data-active-template="sign_up">Create Free Account</a>
+  <a class='authentication_triggers' data-active-template="sign_up">Signup for free Account</a>
 </template>
 <template name="login">
   <a class='authentication_triggers' data-active-template="sign_in">Login</a>
@@ -64,40 +71,100 @@
   {{> UI.dynamic template=activeTemplate}}
 </template>
 <template name="index_content">
-  <div class="cell well tci main-content">
-      <div class="mbm mbl--m pts tac">
-        <h1 class="mbf tci">Online learning platform for social studies</h1>
-      </div>
-      <div class="row column-change-row">
-    <div class="large-6 columns column-change-update-zeal">
-    <div class="content">
-  <div class="update-zeal">
-    <div class="update-zeal-disp">
-    <div class="update-zeal-change">
-    <h1>Experience the fun interactive way of learning</h1>
+<div class="small-12 small-centered columns home-top">
+<div class="interactive-content"></div>
+<div class="small-10 small-centered columns heading-image">
+  <h1>Learn Social Studies in fun and interative way using maps</h1>
+</div>
+</div>
+<div class="rows course-tile">
+  <div class="medium-3 columns">
+  <div id="course-geography">Geography  
+  <div id="geography-tile"><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" /></div>
+  <div class="course-explore"><a  href="#">Explore</a></div>
+  </div>
+  </div>
+  <div class="medium-3 columns">
+  <div id="course-history">History
+  <div id="history-tile"><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" /></div>
+  <div class="course-explore"><a href="#">Explore</a></div>
+  </div>
+  </div>
+  <div class="medium-3 columns">
+  <div id="course-political" >Political Science
+  <div id="political-tile"><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" /></div>
+  <div class="course-explore"><a href="#">Explore</a></div>
+  </div>
+  </div>
+  <div class="medium-3 columns end">
+  <div id="course-economics">Economics
+  <div id="economics-tile"><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" /></div>
+  <div class="course-explore"><a href="#">Explore</a></div>
+  </div>
+  </div>
+  </div>
+  <div class="small-12 small-centered columns">
+  <div class="medium-12 columns features">
+    <span>Features</span>
+    <ul>
+    <li>Interactive Lessons</li>
+    <li>Fun Excercise</li>
+    <li>Discuss with others</li>
+    <li>Intuitive apps for understanding concepts</li>
+  </ul>
+  </div>
+  </div>
+  <div class="rows learnteach-tile">
+  <div class="medium-6 columns">
+    <div>Learn
+    <div id="learn-tile"><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" /></div>
+    <div class="course-explore"><a href="#">Sign Up for free</a></div>
     </div>
+  </div>
+  <div class="medium-6 columns end">
+    <div>Teach
+    <div id="teach-tile"><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" /></div>
+    <div class="course-explore"><a href="#">Become Author</a></div>
     </div>
   </div>
   </div>
-  </div>
-  <div class="large-6 columns column-change-feature-zeal">
-  <div class="feature-zeal">
-    <p>MapZeal- A different platform for Aspirants to gain knowledge through maps.Different and Innovative</p>
-    <ul class="course-highlight">
-    <li class="list-item list-item--label">LEARN:</li>
-    <li class="list-item list-item--label"><a class="tag tag--history" href="# ">History</a></li>
-    <li class="list-item list-item--label"><a class="tag tag--history" href="# ">Geography</a></li>
-    <li class="list-item list-item--label"><a class="tag tag--history" href="# ">Politics</a></li>
-    <li class="list-item list-item--label"><a class="tag tag--history" href="# ">Leaders</a></li>
-    </ul>
-  </div>
-  </div>
-  </div>
-  </div>
-
-  
 </template>
-
+<template name="footer_content">
+<div class="rows">
+<div class="medium-12 columns footer footer-glow">
+<div class="medium-1 columns footer-content">
+  <ul class="learn-list">
+  <li><a>Learn</a></li>
+  <li><a>View Courses</a></li>
+  <li><a>Labs</a></li>
+  <li><a>Blogs</a></li>
+  </ul>
+</div>
+<div class="medium-1 columns footer-content">
+  <ul class="community-list">
+  <li><a>Community</a></li>
+  <li><a>Suggest Leason</a></li>
+  <li><a>Suggest Feature</a></li>
+  <li><a>Discuss</a></li>
+  </ul>
+</div>
+<div class="medium-1 columns footer-content">
+  <ul class="about-list">
+  <li><a>About</a></li>
+  <li><a>About Us</a></li>
+  <li><a>Jobs</a></li>
+  <li><a>Support</a></li>
+  </ul>
+</div>
+<div class="medium-1 columns footer-content">
+  <img src="/images/mapzeal _logo.jpg" alt="Mapzeal" />
+</div>
+<div class="medium-3 columns end footer-content-logo-desc">
+  MapZeal - Learn Social Studies in fun and interative way using maps
+</div>
+</div>
+</div>
+</template>
 <template name="sign_in">
     <fieldset>
         <legend>Sign In</legend>
@@ -113,7 +180,9 @@
               </div>
               <div class="row">
                 
-                <div class="small-9 columns">
+                <div class="small-text-align: center;
+  display: block;
+9 columns">
                   <label class="lbl-pwd">Password
                     <input id="password" type="password" placeholder="Password">
                   </label>
@@ -144,7 +213,7 @@
                 
                 <div class="small-9 columns">
                   <label class="lbl-email">Your email address
-                    <input type="text" placeholder="">
+                    <input id='sign_up_email' type="text" placeholder="">
                   </label>
                 </div>
               </div>
@@ -152,7 +221,7 @@
                 
                 <div class="small-9 columns">
                   <label class="lbl-email">Choose a user name
-                    <input type="text" placeholder="">
+                    <input id='sign_up_username' type="text" placeholder="">
                   </label>
                 </div>
               </div>
@@ -160,16 +229,16 @@
                 
                 <div class="small-9 columns">
                   <label class="lbl-pwd">Choose a Password
-                    <input type="password" placeholder="">
+                    <input id='sign_up_password' type="password" placeholder="">
                   </label>
                 </div>
                 
               </div>
-              <div class="row"><input type="checkbox" >Show Password</div>
+              <div class="row"><input id='show_password' type="checkbox" >Show Password</div>
             </div>
             
         </div>
-        <div class="row"><a class="button">CREATE FREE ACCOUNT</a></div>
+        <div class="row"><a id="btn_sign_up" class="button">CREATE FREE ACCOUNT</a></div>
         <div class="row">
         Sign up With : {{> otherLoginOptions}}
         </div>
@@ -179,7 +248,6 @@
 
 <template name="otherLoginOptions">
 </template>
-
 <!--
 <template name="loginButtons">
   <div id="login-buttons" class="login-buttons-dropdown-align-{{align}}">

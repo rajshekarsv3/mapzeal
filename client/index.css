@@ -1,5 +1,5 @@
 body{ /* fallback */ 
-background: rgb(59, 86, 110);
+background: rgb(58, 113, 163);
 	font-family: Helvetica, Arial, Sans-Serif;
 }
 header
@@ -392,4 +392,133 @@ transition: 0.2s ease-in-out;
 -moz-box-shadow: 0 0 20px black; 
 box-shadow:0 0 20px black;
 }
+.home-top
+{
+	margin-top: 1em;
+}
+.interactive-content
+{
+	height:22em;
+	width: 100%;
+	background-color: white
+}
+.heading-image
+{
+	position: absolute;
+	top:10%;
+	color: black;
+	left:15%;
+}
+.heading-image h1
+{
+	color: black;
+}
+.course-tile
+{
+	display:block;
+}
+.course-tile div
+{	
+	border-radius: 3px;
+	padding: 14px;
+	display: block;
+}
+.course-tile div div
+{
+	background-color: white;
+}
+.learnteach-tile div div
+{
+background-color: white;
+}
+.learnteach-tile div
+{	
+	border-radius: 3px;
+	padding: 14px;
+	display: block;
+}
+.course-tile #geography-tile,#history-tile,#political-tile,#economics-tile
+{
+	margin:auto;
+	z-index: 99999999;
+	background-repeat: no-repeat;	
+	opacity: 2;
+	text-align: center;
+	display: block;
+}
+
+.learnteach-tile #learn-tile,#teach-tile 
+{
+	text-align: center;
+	display: block;
+}
+
+.course-explore
+{
+	text-align: center;
+	margin-top: 0.5em;
+}
+
+.course-explore a:hover
+{
+color: green;
+}
+
+.course-tile > div {
+    display: block
+}
+.course-explore:hover{
+-webkit-box-shadow: 0px 0px 15px 5px rgb(59, 86, 110);
+-moz-box-shadow: 0px 0px 15px 5px rgb(59, 86, 110)ck;
+box-shadow: 0px 0px 15px 5px rgb(59, 86, 110);  
+-webkit-transition: 0.2s ease-in-out;
+transition: 0.2s ease-in-out;
+}
+
+.features
+{
+	background-color: white;
+	padding: 20px;
+}
+
+.footer
+{
+	background-color: rgb(225, 234, 229);
+	padding: 10px;
+}
+
+.footer-content
+{
+	margin: 20px;
+	margin-left:60px;
+	font-size: 14px;
+}
+
+.footer-content-logo-desc
+{
+	margin: 20px;
+	font-size: 14px;
+}
+
+.learn-list,.community-list,.about-list
+{
+	font-size: 14px;
+	display: block;
+	list-style-type: none;
+}
+.footer li:first-child
+{
+	font-weight: bold;
+}
+
+.footer-glow
+{
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
+
+
+
+
 
