@@ -85,14 +85,14 @@
     }
     });
 
-Template._loginButtonsLoggingInPadding.helpers({
+/*Template._loginButtonsLoggingInPadding.helpers({
   dropdown: dropdown
-});
+});*/
 
-$(document).ready(function(){
+/*$(document).ready(function(){
 
         
-});
+});*/
 
 /*  Template.hello.helpers({
     counter: function () {
