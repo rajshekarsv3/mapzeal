@@ -34,7 +34,8 @@
       Meteor.loginWithPassword(username,password,function(){
         Session.set("current_template", "index_content");
       });
-    }
+    },
+    
   });
 
   Template.userRightBar.helpers({
@@ -110,6 +111,26 @@
     'click #btn_logout': function () {
       Meteor.logout();
       
+    }
+  });
+
+  Template.otherLoginOptions.events({
+    'click #btn_facebook': function(){
+      
+        Meteor.loginWithFacebook({ requestPermissions: ['email']},
+        function (error) {
+            if (error) {
+                return console.log(error);
+            }
+        });
+    },
+    'click #btn_google':function(){
+        Meteor.loginWithGoogle({ requestPermissions: ['email']},
+        function (error) {
+            if (error) {
+                return console.log(error);
+            }
+        });
     }
   });
 
