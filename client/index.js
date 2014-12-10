@@ -116,7 +116,7 @@
 
   Template.otherLoginOptions.events({
     'click #btn_facebook': function(){
-      
+        console.log("hello");
         Meteor.loginWithFacebook({ requestPermissions: ['email']},
         function (error) {
             if (error) {
