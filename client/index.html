@@ -157,11 +157,9 @@
   <li><a>Support</a></li>
   </ul>
 </div>
-<div class="medium-1 columns footer-content">
-  <img src="/images/mapzeal _logo.jpg" alt="Mapzeal" />
-</div>
-<div class="medium-3 columns end footer-content-logo-desc">
-  MapZeal - Learn Social Studies in fun and interative way using maps
+<div class="medium-5 columns end footer-content">
+  <img class="footer-logo" src="/images/mapzeal _logo.jpg" alt="Mapzeal" />
+  <span class="footer-logo-content">MapZeal - Learn Social Studies in fun and interative way using maps</span>
 </div>
 </div>
 </div>
@@ -181,9 +179,7 @@
               </div>
               <div class="row">
                 
-                <div class="small-text-align: center;
-  display: block;
-9 columns">
+                <div class="small-9 columns">
                   <label class="lbl-pwd">Password
                     <input id="password" type="password" placeholder="Password">
                   </label>
@@ -196,7 +192,7 @@
         </div>
         <div class="row"><a id='btn_sign_in' class="button">Sign In</a></div>
         <div class="row">Dont have a account ? {{> create_account}}</div>
-        <div class="row">
+        <div class="row social-icon">
         Sign In With : {{> otherLoginOptions}}
         </div>
     </fieldset>
@@ -248,7 +244,8 @@
 </template>
 
 <template name="otherLoginOptions">
-  <a id="btn_facebook">Facebook</a><a id="btn_google">Google</a>
+  <a class="webicon facebook icon-align" href="#">Facebook</a>
+  <a class="webicon googleplus icon-align" href="#">Google</a>
 </template>
 <!--
 <template name="loginButtons">

@@ -469,7 +469,7 @@ color: green;
 }
 .course-explore:hover{
 -webkit-box-shadow: 0px 0px 15px 5px rgb(59, 86, 110);
--moz-box-shadow: 0px 0px 15px 5px rgb(59, 86, 110)ck;
+-moz-box-shadow: 0px 0px 15px 5px rgb(59, 86, 110);
 box-shadow: 0px 0px 15px 5px rgb(59, 86, 110);  
 -webkit-transition: 0.2s ease-in-out;
 transition: 0.2s ease-in-out;
@@ -517,6 +517,110 @@ transition: 0.2s ease-in-out;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
   box-shadow:         3px 3px 5px 6px #ccc;
 }
+
+.footer-logo
+{
+	width:50px;
+	height: 50px
+}
+.footer-logo-content
+{
+	display: inline-block;
+	font-size: 14px;
+	margin-left: 5px;
+}
+
+/* Webicons by Adam Fairhead at Fairhead Creative http://fairheadcreative.com */
+.webicon {
+  display: inline-block;
+  background-size: 100%;
+  width: 30px;
+  height: 30px;
+  text-indent: -999em;
+  text-align: left;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px; }
+
+.webicon:hover {
+	-webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+     box-shadow: 0 8px 15px -6px black;
+-webkit-transition: 0.2s ease-in-out;
+transition: 0.2s ease-in-out; }
+
+.webicon.small {
+  width: 20px;
+  height: 20px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px; }
+
+.webicon.large {
+  width: 48px;
+  height: 48px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px; }
+
+/* restore webicons accessibility for print */
+@media print {
+  * {
+      background: transparent !important;
+      color: #000 !important;
+      -moz-box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+  }
+  .webicon {
+    text-indent: 0;
+    width: auto !important;
+    height: auto !important;
+    -moz-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+  }
+}
+
+.icon-align
+{
+margin-left: 10px;
+}
+
+.social-icon
+{
+	margin-top:20px;
+}
+.facebook {
+  background: url("images/webicons/webicon-facebook.png");
+  }
+
+.no-svg .webicon.facebook.large {
+  background: url("images/webicons/webicon-facebook.png"); }
+
+.no-svg .webicon.facebook.small {
+  background: url("images/webicons/webicon-facebook-s.png"); }
+
+.svg .webicon.facebook {
+  background: url("images/webicons/webicon-facebook.svg"); }
+
+ .googleplus {
+  background: url("images/webicons/webicon-googleplus-m.png");
+  }
+
+.no-svg .webicon.googleplus.large {
+  background: url("images/webicons/webicon-googleplus.png"); }
+
+.no-svg .webicon.googleplus.small {
+  background: url("images/webicons/webicon-googleplus-s.png"); }
+
+.svg .webicon.googleplus {
+  background: url("images/webicons/webicon-googleplus.svg"); }
 
 
 
