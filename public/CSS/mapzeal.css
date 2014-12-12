@@ -1,0 +1,67 @@
+.heading-image
+{
+	position: absolute;
+	top:10%;
+	color: black;
+	left:15%;
+}
+.heading-image 
+
+h1
+{
+	color: black;
+}
+.learn-teach-interactive-content
+{
+	height:17em;
+	width: 100%;
+}
+.home-top
+{
+	margin-top:1em;
+}
+
+.global-background
+{
+	background-color: white;
+}
+.heading
+{
+	padding: 20px;
+}
+
+input[type="text"],textarea
+{
+	border: 1px solid #3A71A3;
+
+}
+input[type="text"]:focus, textarea:focus
+{
+	border: 1px solid #3A71A3;
+	box-shadow: 0 0 5px #3A71A3;
+}
+
+fieldset input[type="text"]:focus,input[type="password"]:focus, textarea:focus
+{
+
+	border: 1px solid #3A71A3;
+	box-shadow: 0 0 5px white;
+}
+
+.right
+{
+	float: right;
+}
+.top-margin
+{
+	margin-top: 20px;
+}
+.left-margin
+{
+	padding-left: 110px;
+}
+div .author-name
+{
+	text-align: center;
+	padding-top: 5px;
+}
