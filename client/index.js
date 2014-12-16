@@ -10,7 +10,7 @@
   });
 
 
-  Template.display_content.helpers({
+  Template.home.helpers({
       activeTemplate: function(){
         return  Session.get('current_template');
       }
@@ -133,5 +133,18 @@
         });
     }
   });
+
+
+
+//Routing
+
+
+Router.route('/', function () {
+  this.render('home');
+});
+
+Router.route('/learn', function () {
+  this.render('learn_content');
+});
 
 
