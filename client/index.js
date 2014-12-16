@@ -21,8 +21,12 @@
     'click #btn_sign_in': function(){
       var username = $("#username").val();
       var password = $("#password").val();
-      Meteor.loginWithPassword(username,password,function(){
-        Session.set("current_template", "index_content");
+      Meteor.loginWithPassword(username,password,function(err){
+        if(err)
+          alert(err['reason']+' Please try again');
+        else
+          Router.go('/');
+        
       });
     },
     
