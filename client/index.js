@@ -2,7 +2,7 @@
 
   
 
-  Session.setDefault("current_template", "index_content");
+ 
 
   Accounts.ui.config({
 
@@ -15,19 +15,9 @@
         return  Session.get('current_template');
       }
     });
-  Template.create_account.events({
-    'click .authentication_triggers': function(){
-        console.log(Meteor.user());
-        Session.set('current_template', $(event.target).data("activeTemplate"));
-    }
-  });
+
+
   Template.login.events({
-    'click .authentication_triggers': function(){
-        console.log("hi");
-        Session.set('current_template', $(event.target).data("activeTemplate"));
-    }
-  });
-  Template.sign_in.events({
     'click #btn_sign_in': function(){
       var username = $("#username").val();
       var password = $("#password").val();
@@ -55,7 +45,7 @@
     }
   });
 
-  Template.sign_up.events({
+  Template.signup.events({
     'change #show_password': function(){
       if($("#show_password").is(':checked')){
         $("#sign_up_password").attr('type','text');
@@ -138,13 +128,30 @@
 
 //Routing
 
-
-Router.route('/', function () {
-  this.render('home');
+Router.configure({
+  layoutTemplate: 'ApplicationLayout'
 });
 
+
+Router.route('/', function () {
+     this.render('index_content');
+ });
+
 Router.route('/learn', function () {
-  this.render('learn_content');
+  this.render('learn');
+});
+
+Router.route('/teach', function () {
+  this.render('teach');
+});
+
+
+Router.route('/login', function () {
+  this.render('login');
+});
+
+Router.route('/signup', function () {
+  this.render('signup');
 });
 
 
