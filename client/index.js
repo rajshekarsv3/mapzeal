@@ -158,4 +158,8 @@ Router.route('/signup', function () {
   this.render('signup');
 });
 
+Router.route('/forgotPassword', function () {
+  this.render('forgotPassword');
+});
+
 

@@ -697,10 +697,6 @@ margin-left: 10px;
 	margin-top: 10px;
 }
 
-.bottom
-{
-	margin-bottom: 20px;
-}
 
 /*CSS for Learn Template*/
 .learn-description,.learn-review
@@ -722,6 +718,11 @@ margin-left: 10px;
 {
 	text-align: center;
 	margin-top: 20px;
+}
+
+.left-border
+{
+	border-left:10px solid rgb(58, 113, 163);
 }
 
 

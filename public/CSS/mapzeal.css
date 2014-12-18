@@ -11,7 +11,7 @@ h1
 {
 	color: black;
 }
-.learn-teach-interactive-content
+.learn-teach-interactive-content,.forgot-pwd
 {
 	height:17em;
 	width: 100%;
@@ -65,3 +65,15 @@ div .author-name
 	text-align: center;
 	padding-top: 5px;
 }
+
+.center
+{
+	text-align: center;
+}
+
+.bottom
+{
+	margin-bottom: 20px;
+}
+
+

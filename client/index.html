@@ -1,8 +1,8 @@
 <head>
   <title>mapzeal_node</title>
   <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" href="css/foundation-icons/foundation-icons/foundation-icons.css" />
-  <link rel="stylesheet" href="css/mapzeal.css" />
+  <link rel="stylesheet" href="CSS/foundation-icons/foundation-icons/foundation-icons.css" />
+  <link rel="stylesheet" href="CSS/mapzeal.css" />
 </head>
 
 <body>
@@ -46,15 +46,15 @@
       </li>
       <li class="toggle-topbar menu-icon"><a href="#" id="menu"><span class="menu"></span></a></li>
     </ul>
- 
+
     <section class="top-bar-section"> 
       {{#if currentUser}}
         {{> userRightBar}}
       {{else}}
         {{> normalRightBar}} 
       {{/if}}
-
     </section>
+    
   </nav>
 </template>
 
@@ -218,7 +218,7 @@
                 </div>
                 
               </div>
-              <div class="row"><a>?forgot your password</a></div>
+              <div class="row"><a href='forgotPassword'>?forgot your password</a></div>
             </div>
             
         </div>
@@ -278,6 +278,22 @@
 <template name="otherLoginOptions">
   <a class="webicon facebook icon-align" id="btn_facebook">Facebook</a>
   <a class="webicon googleplus icon-align" id="btn_google">Google</a>
+</template>
+
+<template name="forgotPassword">
+<div class="small-12 small-centered columns home-top fixed-bottom">
+<div class="rows columns forgot-pwd global-background bottom">
+  <h3 class="heading">Fogot Password</h3>
+  <div class="row">
+  <div class="small-8 small-centered columns center">
+<input type="text" placeholder="Email" />
+</div>
+  <div class="small-8 small-centered columns center">
+<a href="#" class="button radius">Send Password</a>
+</div>
+</div>
+</div>
+</div>
 </template>
 <!--
 <template name="loginButtons">
