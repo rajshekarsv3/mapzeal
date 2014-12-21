@@ -1,3 +1,13 @@
+
+@font-face {
+    src: url(VarelaRound-Regular.ttf);
+}
+
+body
+{
+	font-family: varela round;
+}
+
 .heading-image
 {
 	position: absolute;
@@ -30,11 +40,6 @@ h1
 	padding: 20px;
 }
 
-input[type="text"],textarea
-{
-	border: 1px solid #3A71A3;
-
-}
 input[type="text"]:focus, textarea:focus
 {
 	border: 1px solid #3A71A3;
@@ -76,4 +81,60 @@ div .author-name
 	margin-bottom: 20px;
 }
 
+#menu-list
+{
+margin-top: 20px;
+margin-right: 20px;
+}
 
+#menu-list li a
+{
+	font-size: 10pt;
+	color: black;
+	font-family: varela round;
+	text-transform: uppercase;
+	font-weight: normal;
+	padding-left: 25px;
+    padding-right: 25px;
+}
+
+#menu-list li a:hover
+{
+	color:rgb(11, 152, 93);
+}
+
+#menu-list li .login
+{
+color: white;
+}
+
+#learn-menu,#teach-menu
+{
+	display: initial;
+	border-right: 2px solid black;    
+    height: 10px;
+    vertical-align: middle;
+}
+
+#menu-list li:hover>#learn-menu,#teach-menu
+{
+	background-color: white;
+}
+
+.top-bar-section ul li
+{
+	background:white;
+}
+
+/*
+
+Fonts Used: Varela Round (google web font)
+
+Header: 8pt
+Body: 3.5pt
+Body Header: 3.8 (Caps) 
+Spec: 4pt
+Footer Header: 3.5 (Caps)
+Footer Body: 3.2 
+Footer Side Headding: 8pt
+*/

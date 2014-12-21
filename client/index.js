@@ -2,7 +2,12 @@
 
   
 
- 
+ //Jquery
+$(document).ready(function () 
+{ 
+
+});
+
 
   Accounts.ui.config({
 
@@ -161,5 +166,8 @@ Router.route('/signup', function () {
 Router.route('/forgotPassword', function () {
   this.render('forgotPassword');
 });
+
+
+
 
 

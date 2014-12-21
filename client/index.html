@@ -34,19 +34,16 @@
 
 
 <template name='header'>
-  <nav class="top-bar rows" data-topbar role="navigation" data-options="sticky_on: large">
+  <nav class="top-bar" data-topbar >
     <ul class="title-area">       
-      <li class="name">
-        <h1>
+      <li class="name">  
          <div id="logo">
-        <a href='/'><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" />         
-        </a>
+        <a href='/'><img class="top-bar-logo" src="/images/logo_header.png" />         
+        </a>       
     </div>
-        </h1>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#" id="menu"><span class="menu"></span></a></li>
+      </li>      
+      <li class="toggle-topbar menu-icon"><i id="menu-icon" class="fi-list size-72"></i></li>
     </ul>
-
     <section class="top-bar-section"> 
       {{#if currentUser}}
         {{> userRightBar}}
@@ -61,16 +58,22 @@
 <template name='footer'>
   <footer>
     <div class="rows">
-    <div class="medium-12 columns footer footer-glow">
-    <div class="medium-1 columns footer-content">
+    <div class="medium-12 columns footer">
+    <div class="large-1 medium-1 small-2 columns footer-content">
       <ul class="learn-list">
       <li><a>Learn</a></li>
-      <li><a>View Courses</a></li>
+      <li><a>Course</a></li>
       <li><a>Labs</a></li>
       <li><a>Blogs</a></li>
       </ul>
     </div>
-    <div class="medium-1 columns footer-content">
+     <div class="large-2 medium-1 small-2 columns footer-content">
+      <ul class="author-list">
+      <li><a>Teach</a></li>
+      <li><a>Become Author</a></li>
+      </ul>
+    </div>
+    <div class="large-2 medium-1 small-3 columns footer-content">
       <ul class="community-list">
       <li><a>Community</a></li>
       <li><a>Suggest Leason</a></li>
@@ -78,7 +81,7 @@
       <li><a>Discuss</a></li>
       </ul>
     </div>
-    <div class="medium-1 columns footer-content">
+    <div class="large-1 medium-1 small-3 columns footer-content">
       <ul class="about-list">
       <li><a>About</a></li>
       <li><a>About Us</a></li>
@@ -86,18 +89,10 @@
       <li><a>Support</a></li>
       </ul>
     </div>
-    <div class="medium-5 columns end footer-content">
-      <img class="footer-logo" src="/images/mapzeal _logo.jpg" alt="Mapzeal" />
-      <span class="footer-logo-content">MapZeal - Learn Social Studies in fun and interative way using maps</span>
-    </div>
-    <div class="medium-12 columns">
-    <div class="medium-2 columns footer-content-second-row">
-      <ul class="author-list">
-      <li><a>Teach</a></li>
-      <li><a>Become Author</a></li>
-      </ul>
-    </div>
-    <div class="smGlobalBtn  medium-8 columns">
+    <div class="medium-6 columns footer-content left-margin">
+      <span class="footer-logo">mapzeal</span>
+      <p class="footer-logo-content">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout .The point of using Loren Ipsum is that it has a more or less normal distribution  of letters,as opposed to using 'Content here,content here',making it look like readable englidh.Many Desktop publishing packages and web page editorsnow use Loren Ipsum</p>
+      <div class="smGlobalBtn  medium-8 columns">
     <ul>
     <li><a href="#"><i class="fi-social-facebook size-72"></i></a></li>
     <li><a href="#"><i class="fi-social-twitter size-72"></i></a></li>
@@ -116,10 +111,10 @@
 
 <template name="normalRightBar">
     <ul class="right" id="menu-list">
-      <li><a href='learn' >Learn</a></li> 
-      <li><a href='teach'>Teach</a></li>
-      <li><a href='signup'>Signup for free Account</a></li>       
-      <li><a href='login'>Login</a></li>
+      <li><a id="learn-menu" href='learn'>Learn</a></li> 
+      <li><a id="teach-menu" href='teach'>Teach</a></li>
+      <li><a href='signup'>Signup for free Account</a></li>         
+      <li><a href='login' class="button radius login">Login</a></li>
     </ul>
 </template>
 <template name="userRightBar">
@@ -137,62 +132,53 @@
 
 
 <template name="index_content">
-<div class="small-12 small-centered columns home-top">
-<div class="interactive-content"></div>
-<div class="small-10 small-centered columns heading-image">
-  <h1>Learn Social Studies in fun and interative way using maps</h1>
-</div>
+<div class="rows">
+<div class="main-content">
+  <h3>Learn Social Studies in fun interative way</h3>
+</div>  
 </div>
 <div class="rows course-tile">
-  <div class="medium-3 columns">
-  <div id="course-geography">Geography  
-  <div id="geography-tile"><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" /></div>
-  <div class="course-explore"><a  href="#">Explore</a></div>
+  <div class="large-3 columns">
+  <div class="course" id="course-geography">
+  <div class="tile" id="geography-tile"><img src="/images/geography.png" /></div>
+  <div class="course-explore align-1">
+  <span>GEOGRAPHY</span>
+  <p>It is a long established fact that reader will be distracted</p>
+  <a href="#" class="button course-button geography">EXPLORE</a></div>
   </div>
   </div>
-  <div class="medium-3 columns">
-  <div id="course-history">History
-  <div id="history-tile"><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" /></div>
-  <div class="course-explore"><a href="#">Explore</a></div>
+  <div class="large-3 columns">
+  <div class="course" id="course-history">
+  <div class="tile" id="history-tile"><img src="/images/history.png" /></div>
+  <div class="course-explore align-2">
+  <span>HISTORY</span>
+  <p>It is a long established fact that reader will be distracted</p>
+  <a href="#" class="button course-button history-tile">EXPLORE</a></div>
   </div>
   </div>
-  <div class="medium-3 columns">
-  <div id="course-political" >Political Science
-  <div id="political-tile"><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" /></div>
-  <div class="course-explore"><a href="#">Explore</a></div>
+   <div class="large-3 columns end">
+  <div class="course" id="course-economics">
+  <div class="tile" id="economics-tile"><img src="/images/economics.png" /></div>
+  <div class="course-explore align-1">
+  <span>ECONOMICS</span>
+  <p>It is a long established fact that reader will be distracted</p>
+  <a href="#" class="button course-button economics">EXPLORE</a></div>
   </div>
   </div>
-  <div class="medium-3 columns end">
-  <div id="course-economics">Economics
-  <div id="economics-tile"><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" /></div>
-  <div class="course-explore"><a href="#">Explore</a></div>
+  <div class="large-3 columns">
+  <div class="course" id="course-political">
+  <div class="tile" id="political-tile"><img src="/images/politicscience.png" /></div>
+  <div class="course-explore align-2">
+  <span>POLITICAL SCIENCE</span>
+  <p>It is a long established fact that reader will be distracted</p>
+  <a href="#" class="button course-button politicscience" >EXPLORE</a></div>
   </div>
   </div>
   </div>
-  <div class="small-12 small-centered columns">
-  <div class="medium-12 columns features">
-    <span>Features</span>
-    <ul>
-    <li>Interactive Lessons</li>
-    <li>Fun Excercise</li>
-    <li>Discuss with others</li>
-    <li>Intuitive apps for understanding concepts</li>
-  </ul>
-  </div>
-  </div>
-  <div class="rows learnteach-tile">
-  <div class="medium-6 columns">
-    <div>Learn
-    <div id="learn-tile"><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" /></div>
-    <div class="course-explore"><a href="#">Sign Up for free</a></div>
-    </div>
-  </div>
-  <div class="medium-6 columns end">
-    <div>Teach
-    <div id="teach-tile"><img class="top-bar-logo" src="/images/mapzeal _logo.jpg" /></div>
-    <div class="course-explore"><a href="#">Become Author</a></div>
-    </div>
-  </div>
+  <div class="rows top-margin">
+  <div class="medium-4 columns bg-color"><span><a href="#">INTERACTIVE LEARNING</a></span></div>
+  <div class="medium-4 columns bg-color"><span><a href="#">FUN EXCRCISE</a></span></div>
+  <div class="medium-4 columns bg-color"><span><a href="#">PEER DISCUSS</a></span></div>
   </div>
 </template>
 
