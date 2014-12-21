@@ -203,15 +203,25 @@ fieldset legend
 	}
 }
 
-@media screen and (max-width: 900px)
+@media screen and (max-width: 70em)
 {
 	/*#menu-list
 	{
-		display: none;
+		margin-top: 100px;
+		text-align: center;
 	}
 	#menu
 	{
 		display: block;
+	}
+	
+	#learn-menu,#teach-menu
+	{
+		border-right: none;
+	}
+	.main-content
+	{
+		margin-top: 120px;
 	}*/
 }
 

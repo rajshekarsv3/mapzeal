@@ -42,7 +42,7 @@
         </a>       
     </div>
       </li>      
-      <li class="toggle-topbar menu-icon"><i id="menu-icon" class="fi-list size-72"></i></li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
     </ul>
     <section class="top-bar-section"> 
       {{#if currentUser}}
@@ -51,7 +51,6 @@
         {{> normalRightBar}} 
       {{/if}}
     </section>
-    
   </nav>
 </template>
 
@@ -111,10 +110,10 @@
 
 <template name="normalRightBar">
     <ul class="right" id="menu-list">
-      <li><a id="learn-menu" href='learn'>Learn</a></li> 
-      <li><a id="teach-menu" href='teach'>Teach</a></li>
-      <li><a href='signup'>Signup for free Account</a></li>         
-      <li><a href='login' class="button radius login">Login</a></li>
+      <li class="show-for-medium-up"><a id="learn-menu" href='learn'>Learn</a></li> 
+      <li class="show-for-medium-up"><a id="teach-menu" href='teach'>Teach</a></li>      
+      <li class="show-for-medium-up"><a href='signup'>Signup for free Account</a></li>            
+      <li class="show-for-medium-up"><a href='login' class="button radius login">Login</a></li>      
     </ul>
 </template>
 <template name="userRightBar">
@@ -134,7 +133,7 @@
 <template name="index_content">
 <div class="rows">
 <div class="main-content">
-  <h3>Learn Social Studies in fun interative way</h3>
+  <div class="small-12 columns"><h3>Learn Social Studies in fun interative way</h3></div>
 </div>  
 </div>
 <div class="rows course-tile">
