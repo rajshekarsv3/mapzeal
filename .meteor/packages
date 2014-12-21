@@ -13,6 +13,5 @@ accounts-google
 accounts-ui-unstyled
 foundation
 iron:router
-jquery-ui
 service-configuration
 
