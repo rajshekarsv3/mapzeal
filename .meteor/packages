@@ -11,8 +11,11 @@ accounts-password
 accounts-facebook
 accounts-google
 accounts-ui-unstyled
-service-configuration
 foundation
 iron:router
+<<<<<<< HEAD
 jquery-ui
+=======
+service-configuration
+>>>>>>> dd615ed78fde400027188a60092337bca8ca36b5
 
