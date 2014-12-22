@@ -772,7 +772,55 @@ margin-left: 10px;
 	margin-top: 10px;
 }
 
+h3
+{
+font-family: varela round;
+color:rgb(42, 155, 205);
+}
 
+h6
+{
+font-family: varela round;	
+}
+
+.reg-teach
+{
+	color: black;
+}
+
+.form
+{
+	text-align: center;
+	font-family: varela round;
+}
+
+.comment textarea
+{
+	height:120px;
+	border-radius: 5px;
+}
+form input[type=text]
+{
+	border-radius: 5px;
+}
+
+.reg-teach-sub
+{
+	height: 10px;
+	vertical-align: middle;
+	line-height: 1px;
+	font-family: varela round;
+}
+
+.faq-content div h5
+{
+	font-family: varela round;
+}
+
+.faq-content .bottom-space
+{
+	margin-bottom: 50px;
+}
 /*CSS for Learn Template*/
 .learn-description,.learn-review
 {
