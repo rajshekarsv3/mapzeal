@@ -67,7 +67,6 @@ $(document).ready(function ()
     ,
     'click #btn_sign_up': function(){
       Accounts.createUser({
-      username: $("#sign_up_username").val(),
       password: $("#sign_up_password").val(),
       emails: [
         {address: $("#signup-name").val(), verified: true}
@@ -133,6 +132,9 @@ $(document).ready(function ()
     }
   });
 
+Meteor.setTimeout(function () {
+    $(document).foundation();
+}, 0);
 
 
 //Routing
