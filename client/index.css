@@ -450,7 +450,8 @@ background-color: white;
 .learnteach-tile #learn-tile,#teach-tile 
 {
 	text-align: center;
-	display: block;
+	background-color: white;
+	border-radius:10px;
 }
 
 .course-explore
@@ -476,7 +477,7 @@ color:rgb(11, 152, 93);
 	width: 140px;
 	padding: 0;
 	vertical-align: middle;
-	padding-top: 4.5px;
+	padding-top: 5px;
 	border-color:white;
 }
 
@@ -753,7 +754,7 @@ margin-left: 10px;
     background: #e64522;
 }
 
-.smGlobalBtn .fi-mail:hover { /* round mail icon*/
+.smGlobalBtn .fi-mail:hover,.fi-social-google-plus:hover { /* round mail icon*/
     background: #FF1F25;
 }
 
@@ -772,15 +773,22 @@ margin-left: 10px;
 	margin-top: 10px;
 }
 
-h3
+h3,h2
 {
 font-family: varela round;
 color:rgb(42, 155, 205);
 }
 
+h5
+{
+	font-family: varela round;
+	color: white;
+}
+
 h6
 {
 font-family: varela round;	
+line-height: 30px;
 }
 
 .reg-teach
@@ -836,14 +844,121 @@ form input[type=text]
 	display: block;
 	margin-bottom: 10px;
 }
-
 .more
 {
 	text-align: center;
 	margin-top: 20px;
 }
+.season-explore-button,.season-more-button
+{
+	border-radius: 7px;
+	height: 35px;
+	width:100px;
+	padding: 0;
+	font-family: varela round;
+	font-weight: bold;
+	padding-top: 6px;
+	background-color: #0090CA
+}
 
+.history-margin
+{
+	margin-left: 40px;
+}
 
+.bg-learn
+{
+	background-color: #28507F;
+	color: white;
+}
+.row-top
+{	
+	margin: 0px;
+	margin-top: 20px;
+	padding: 0;
+}
+
+.teacher-asst
+{
+	margin-bottom: 20px;
+	padding: 0;
+}
+
+.disp
+{
+	display: table;
+}
+
+.disp span
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.v-middle
+{
+	line-height: 4;
+}
+
+.b-b
+{
+	border-bottom: 2px solid rgb(139, 137, 137);
+}
+
+.review-top
+{
+	margin-top: 20px;
+}
+
+.t-r-margin
+{
+	margin-top: 20px;
+	margin-left: 15px;
+}
+
+.t-r-margin h5
+{
+	color: black;
+}
+
+.left-pad
+{
+	padding-left: 60px;
+}
+
+/*About*/
+.l-border
+{
+	border-left: 4px solid rgb(219, 219, 219);
+}
+
+.about-list-block
+{
+	display: block;
+	height: 50px;
+	line-height: 3;
+}
+
+.about-list-block a
+{
+	float: right;
+	padding-right: 20px;
+	color: black;
+}
+
+.top-margin-abt
+{
+	margin-top: 40px;
+}
+
+ .about-list-block:hover
+{
+	border-top: 3px solid white;
+	border-bottom: 3px solid white;
+	border-right: 3px solid white;
+	color: darkgray;
+	background-color: rgb(170, 196, 211);;
+}
 
 
 

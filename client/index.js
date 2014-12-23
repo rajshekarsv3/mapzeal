@@ -168,6 +168,17 @@ Router.route('/forgotPassword', function () {
   this.render('forgotPassword');
 });
 
+Router.route('/about', function () {
+  this.render('about');
+});
+
+$(document).ready(function()
+{
+$('.top-bar-logo').click(function(event){
+alert('hi');
+});
+});
+
 
 
 
