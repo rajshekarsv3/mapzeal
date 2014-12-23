@@ -3,6 +3,7 @@
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" href="css/foundation-icons/foundation-icons/foundation-icons.css" />
   <link rel="stylesheet" href="css/mapzeal.css" />
+
 </head>
 
 <body>
@@ -34,7 +35,7 @@
 
 
 <template name='header'>
-  <nav class="top-bar" data-topbar >
+  <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">       
       <li class="name">  
          <div id="logo">
@@ -45,11 +46,13 @@
       <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
     </ul>
     <section class="top-bar-section"> 
-      {{#if currentUser}}
-        {{> userRightBar}}
-      {{else}}
-        {{> normalRightBar}} 
-      {{/if}}
+      <ul class="right" id="menu-list">
+        {{#if currentUser}}
+          {{> userRightBar}}
+        {{else}}
+          {{> normalRightBar}} 
+        {{/if}}
+      </ul>
     </section>
   </nav>
 </template>
@@ -109,20 +112,20 @@
 
 
 <template name="normalRightBar">
-    <ul class="right" id="menu-list">
-      <li class="show-for-medium-up"><a id="learn-menu" href='learn'>Learn</a></li> 
-      <li class="show-for-medium-up"><a id="teach-menu" href='teach'>Teach</a></li>      
-      <li class="show-for-medium-up"><a href='signup'>Signup for free Account</a></li>            
-      <li class="show-for-medium-up"><a href='login' class="button radius login">Login</a></li>      
-    </ul>
+   
+      <li><a id="learn-menu" href='learn'>Learn</a></li> 
+      <li><a id="teach-menu" href='teach'>Teach</a></li>      
+      <li><a href='signup'>Signup for free Account</a></li>            
+      <li><a href='login' class="button radius login">Login</a></li>      
+    
 </template>
 <template name="userRightBar">
-    <ul class="right">
+    
       <li><a href='learn'>Learn</a></li>
       <li><a href='teach'>Teach</a></li>               
       <li><a>{{displayName}}</a></li>       
       <li><a id="btn_logout">logout</a></li>
-    </ul>
+    
 </template>
 
 <template name="home">

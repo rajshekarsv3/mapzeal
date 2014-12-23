@@ -2,11 +2,7 @@
 
   
 
- //Jquery
-$(document).ready(function () 
-{ 
 
-});
 
 
   Accounts.ui.config({
@@ -132,9 +128,12 @@ $(document).ready(function ()
     }
   });
 
-Meteor.setTimeout(function () {
+Meteor.startup(function(){
+  $(document).ready(function(){
     $(document).foundation();
-}, 0);
+  });
+  
+});
 
 
 //Routing
