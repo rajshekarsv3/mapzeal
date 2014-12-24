@@ -46,13 +46,11 @@
       <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
     </ul>
     <section class="top-bar-section"> 
-      <ul class="right" id="menu-list">
         {{#if currentUser}}
           {{> userRightBar}}
         {{else}}
           {{> normalRightBar}} 
         {{/if}}
-      </ul>
     </section>
   </nav>
 </template>
@@ -116,11 +114,20 @@
 
 
 <template name="normalRightBar">
-   
+     <ul class="right show-for-large-up" id="menu-list">
       <li><a id="learn-menu" href='learn'>Learn</a></li> 
       <li><a id="teach-menu" href='teach'>Teach</a></li>      
       <li><a href='signup'>Signup for free Account</a></li>            
-      <li><a href='login' class="button radius login">Login</a></li>      
+      <li><a href='login' class="button radius login">Login</a></li> 
+      </ul>  
+
+      <ul class="right show-for-small-only" id="menu-list-mob">
+      <li class="small-12 columns"><a id="learn-menu-small" href='learn'>Learn</a></li> 
+      <li class="small-12 columns"><a id="teach-menu-small " href='teach'>Teach</a></li>      
+      <li class="small-12 columns" ><a href='signup'>Signup for free Account</a></li>            
+      <li class="small-12 columns" ><a href='login' class="button radius login">Login</a></li> 
+      </ul> 
+
     
 </template>
 <template name="userRightBar">
@@ -226,15 +233,16 @@
 
 
 <template name="signup">
+
+<!--
     <fieldset>
-        <legend>Create Free Account</legend>
         <div class="row">
             <div class="small-8 columns">
               <div class="row">
                 
                 <div class="small-9 columns">
                   <label class="lbl-email">Your email address
-                    <input id='sign_up_email' type="text" placeholder="">
+                    <input id='sign_up_email'  type="text" placeholder="">
                   </label>
                 </div>
               </div>
@@ -265,11 +273,54 @@
         </div>
         <div class="row">already having account ? <a href='login'>Login</a></div>
     </fieldset>
+
+    -->
+    <div class="large-6 small-centered columns global-background signup-form top-margin ">
+  <h3>signup</h3>
+<h6 class="reg-teach">FOR AN ACCOUNT</h6>
+<form>
+  <div class="row top-margin ">
+    <div class="large-6 large-centered columns">
+        <input id='sign_up_email' type="text" placeholder="email" />
+    </div>
+    </div>
+    <div class="row">
+    <div class="large-6 large-centered columns">
+        <input id='sign_up_password' type="password" placeholder="password" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 large-centered columns">
+        <input id="checkbox1" type="checkbox"><label for="checkbox1">I am not a robot</label>
+    </div>
+  </div>
+  <div class="row">
+  <div class="large-2 large-centered columns l-h">
+  <a href="#" class="button radius reg-teach-sub">signup</a>
+  </div>
+  </div>
+  <div class="row">
+  <div class="large-2 large-centered columns l-h">
+  <label>or using</label>
+  </div>
+  </div>
+  <div class="row">
+  <div class="small-5 small-centered columns">
+   {{> otherLoginOptions}}
+  </div>
+  </div>
+</form>
+</div>
 </template>
 
 <template name="otherLoginOptions">
-  <a class="webicon facebook icon-align" id="btn_facebook">Facebook</a>
-  <a class="webicon googleplus icon-align" id="btn_google">Google</a>
+<div class="small-6 columns">
+  <a herf="#" id="btn_facebook" class="social-link"><i class="fi-social-facebook signup-icons"></i></a><a href="#" id="link-facebook" class="social-text-link">facebook</a>
+  </div>
+  <div class="small-6 columns bottom">
+  <a href="#" id="btn_google"><i class="fi-social-google-plus signup-icons"></i></a>
+  <a href="#" id="link-google" class="social-text-link">google</a>
+  </div>
 </template>
 
 <template name="forgotPassword">

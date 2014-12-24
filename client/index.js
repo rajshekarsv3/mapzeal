@@ -109,7 +109,7 @@
   });
 
   Template.otherLoginOptions.events({
-    'click #btn_facebook': function(){
+    'click #btn_facebook,#link-facebook': function(){
         console.log("hello");
         Meteor.loginWithFacebook({ requestPermissions: ['email']},
         function (error) {
@@ -118,7 +118,7 @@
             }
         });
     },
-    'click #btn_google':function(){
+    'click #btn_google,#link-google':function(){
         Meteor.loginWithGoogle({ requestPermissions: ['email']},
         function (error) {
             if (error) {

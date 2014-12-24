@@ -203,12 +203,29 @@ fieldset legend
 	}
 }
 
+
+#menu-list-mob
+	{
+		margin: 0;
+		margin-top: 60px; 		
+	}
+
+@media screen and (max-width: 40em)
+{
+	#menu-list
+	{
+		margin: 0;
+	}
+}
+
 @media screen and (max-width: 70em)
 {
-	/*#menu-list
+	#menu-list
 	{
-		margin-top: 100px;
 		text-align: center;
+		-webkit-transition: 0.2s ease-in-out;
+		transition: 0.2s ease-in-out;
+		-prefix-animation: slide 1s ease 3.5s forwards;
 	}
 	#menu
 	{
@@ -222,7 +239,17 @@ fieldset legend
 	.main-content
 	{
 		margin-top: 120px;
-	}*/
+	}
+
+	#logo
+	{
+		margin-left: 20px;
+	}
+
+	.right
+	{
+		float: none !important;
+	}
 }
 
 
@@ -653,6 +680,24 @@ transition: 0.2s ease-in-out; }
   }
 }
 
+.signup-icons
+{
+	font-size: 35px;
+color: rgb(69, 69, 69);
+}
+
+.social-link
+{
+	padding:0;
+}
+
+.social-text-link
+{
+	padding-left: 10px;
+vertical-align: super;
+color: rgb(69, 69, 69);
+}
+
 .icon-align
 {
 margin-left: 10px;
@@ -754,7 +799,7 @@ margin-left: 10px;
     background: #e64522;
 }
 
-.smGlobalBtn .fi-mail:hover,.fi-social-google-plus:hover { /* round mail icon*/
+.smGlobalBtn .fi-mail:hover,.smGlobalBtn .fi-social-google-plus:hover { /* round mail icon*/
     background: #FF1F25;
 }
 
@@ -796,10 +841,23 @@ line-height: 30px;
 	color: black;
 }
 
-.form
+.form,.signup-form
 {
 	text-align: center;
 	font-family: varela round;
+}
+
+.signup-form ::-webkit-input-placeholder {
+  text-align: center;
+}
+.signup-form ::-moz-placeholder { /* Firefox 19+ */
+  text-align: center;
+}
+.signup-form :-ms-input-placeholder {
+  text-align: center;
+}
+.signup-form :-moz-placeholder { /* Firefox 18- */
+  text-align: center;
 }
 
 .comment textarea
@@ -924,6 +982,11 @@ form input[type=text]
 .left-pad
 {
 	padding-left: 60px;
+}
+
+.l-h
+{
+	line-height: 4;
 }
 
 /*About*/
