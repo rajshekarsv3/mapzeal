@@ -46,20 +46,18 @@
       <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
     </ul>
     <section class="top-bar-section"> 
-      <ul class="right" id="menu-list">
         {{#if currentUser}}
           {{> userRightBar}}
         {{else}}
           {{> normalRightBar}} 
         {{/if}}
-      </ul>
     </section>
   </nav>
 </template>
 
 <template name='footer'>
   <footer>
-    <div class="rows">
+    <div class="rows" id="footer">
     <div class="medium-12 columns footer">
     <div class="large-1 medium-1 small-2 columns footer-content">
       <ul class="learn-list">
@@ -93,7 +91,7 @@
     </div>
     <div class="medium-6 columns footer-content left-margin">
       <span class="footer-logo">mapzeal</span>
-      <p class="footer-logo-content">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout .The point of using Loren Ipsum is that it has a more or less normal distribution  of letters,as opposed to using 'Content here,content here',making it look like readable englidh.Many Desktop publishing packages and web page editorsnow use Loren Ipsum</p>
+      <p class="footer-logo-content text-justify">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout .The point of using Loren Ipsum is that it has a more or less normal distribution  of letters,as opposed to using 'Content here,content here',making it look like readable englidh.Many Desktop publishing packages and web page editorsnow use Loren Ipsum</p>
       <div class="smGlobalBtn  medium-8 columns">
     <ul>
     <li><a href="#"><i class="fi-social-facebook size-72"></i></a></li>
@@ -116,11 +114,20 @@
 
 
 <template name="normalRightBar">
-   
+     <ul class="right show-for-large-up" id="menu-list">
       <li><a id="learn-menu" href='learn'>Learn</a></li> 
       <li><a id="teach-menu" href='teach'>Teach</a></li>      
       <li><a href='signup'>Signup for free Account</a></li>            
-      <li><a href='login' class="button radius login">Login</a></li>      
+      <li><a href='login' class="button radius login">Login</a></li> 
+      </ul>  
+
+      <ul class="right show-for-small-only" id="menu-list-mob">
+      <li class="small-12 columns"><a id="learn-menu-small" href='learn'>Learn</a></li> 
+      <li class="small-12 columns"><a id="teach-menu-small " href='teach'>Teach</a></li>      
+      <li class="small-12 columns" ><a href='signup'>Signup for free Account</a></li>            
+      <li class="small-12 columns" ><a href='login' class="button radius login">Login</a></li> 
+      </ul> 
+
     
 </template>
 <template name="userRightBar">
@@ -189,103 +196,114 @@
 </template>
 
 <template name="login">
-    <fieldset>
-        <legend>Sign In</legend>
-          <div class="row">
-            <div class="small-8 columns">
-              <div class="row">
-                
-                <div class="small-9 columns">
-                  <label class="lbl-email">Username/Email
-                    <input id="username" type="text" placeholder="Email or Username">
-                  </label>
-                </div>
-              </div>
-              <div class="row">
-                
-                <div class="small-9 columns">
-                  <label class="lbl-pwd">Password
-                    <input id="password" type="password" placeholder="Password">
-                  </label>
-                </div>
-                
-              </div>
-              <div class="row"><a href='forgotPassword'>?forgot your password</a></div>
-            </div>
-            
-        </div>
-        <div class="row"><a id='btn_sign_in' class="button">Sign In</a></div>
-        <div class="row">Dont have a account ? <a href='signup'>Signup for free Account</a></div>
-        <div class="row social-icon">
-        Sign In With : {{> otherLoginOptions}}
-        </div>
-    </fieldset>
+     <div class="large-6 small-centered columns global-background signin-form top-margin ">
+        <h3>signin</h3>
+        <h6 class="reg-teach">WITH YOUR ACCOUNT</h6>
+        <form>
+    <div class="row top-margin ">
+    <div class="large-6 large-centered columns">
+        <input id="username" type="text" placeholder="email" />
+    </div>
+    </div>
+    <div class="row">
+    <div class="large-6 large-centered columns">
+        <input id="password" type="password" placeholder="password" />
+    </div>
+    </div>
+    <div class="row">
+    <div class="large-6 large-centered columns">
+        <a href='forgotPassword'>?forgot your password</a>
+      </div>
+    </div>
+    <div class="row">
+    <div class="large-2 large-centered columns l-h">
+    <a href="#" class="button radius reg-teach-sub">signin</a>
+    </div>
+    </div>
+    <div class="row">
+    <div class="large-2 large-centered columns l-h">
+    <label>or using</label>
+    </div>
+    </div>
+    <div class="row">
+    <div class="small-5 small-centered columns">
+     {{> otherLoginOptions}}
+    </div>
+    </div>
+</form>
+</div>
 </template>
 
 
 
 
 <template name="signup">
-    <fieldset>
-        <legend>Create Free Account</legend>
-        <div class="row">
-            <div class="small-8 columns">
-              <div class="row">
-                
-                <div class="small-9 columns">
-                  <label class="lbl-email">Your email address
-                    <input id='sign_up_email' type="text" placeholder="">
-                  </label>
-                </div>
-              </div>
-              <div class="row">
-                
-                <div class="small-9 columns">
-                  <label class="lbl-email">Choose a user name
-                    <input id='sign_up_username' type="text" placeholder="">
-                  </label>
-                </div>
-              </div>
-              <div class="row">
-                
-                <div class="small-9 columns">
-                  <label class="lbl-pwd">Choose a Password
-                    <input id='sign_up_password' type="password" placeholder="">
-                  </label>
-                </div>
-                
-              </div>
-              <div class="row"><input id='show_password' type="checkbox" >Show Password</div>
-            </div>
-            
-        </div>
-        {{> reCAPTCHA}}
-        <div class="row"><a id="btn_sign_up" class="button">CREATE FREE ACCOUNT</a></div>
-        <div class="row">
-        Sign up With : {{> otherLoginOptions}}
-        </div>
-        <div class="row">already having account ? <a href='login'>Login</a></div>
-    </fieldset>
+
+    <div class="large-6 small-centered columns global-background signup-form top-margin ">
+        <h3>signup</h3>
+        <h6 class="reg-teach">FOR AN ACCOUNT</h6>
+        <form>
+    <div class="row top-margin ">
+    <div class="large-6 large-centered columns">
+        <input id='sign_up_email' type="text" placeholder="email" />
+    </div>
+    </div>
+    <div class="row">
+    <div class="large-6 large-centered columns">
+        <input id='sign_up_password' type="password" placeholder="password" />
+    </div>
+    </div>
+    <div class="row">
+    <div class="large-6 large-centered columns">
+        <input id="checkbox1" type="checkbox"><label for="checkbox1">I am not a robot</label>
+      </div>
+    </div>
+    <div class="row">
+    <div class="large-2 large-centered columns l-h">
+    <a href="#" class="button radius reg-teach-sub">signup</a>
+    </div>
+    </div>
+    <div class="row">
+    <div class="large-2 large-centered columns l-h">
+    <label>or using</label>
+    </div>
+    </div>
+    <div class="row">
+    <div class="small-5 small-centered columns">
+     {{> otherLoginOptions}}
+    </div>
+    </div>
+</form>
+</div>
+
 </template>
 
 <template name="otherLoginOptions">
-  <a class="webicon facebook icon-align" id="btn_facebook">Facebook</a>
-  <a class="webicon googleplus icon-align" id="btn_google">Google</a>
+<div class="small-6 columns">
+  <a herf="#" id="btn_facebook" class="social-link"><i class="fi-social-facebook signup-icons"></i></a><a href="#" id="link-facebook" class="social-text-link">facebook</a>
+  </div>
+  <div class="small-6 columns bottom">
+  <a href="#" id="btn_google"><i class="fi-social-google-plus signup-icons"></i></a>
+  <a href="#" id="link-google" class="social-text-link">google</a>
+  </div>
 </template>
 
 <template name="forgotPassword">
-<div class="small-12 small-centered columns home-top fixed-bottom">
-<div class="rows columns forgot-pwd global-background bottom">
-  <h3 class="heading">Fogot Password</h3>
-  <div class="row">
-  <div class="small-8 small-centered columns center">
-<input type="text" placeholder="Email" />
-</div>
-  <div class="small-8 small-centered columns center">
-<a href="#" class="button radius">Send Password</a>
-</div>
-</div>
-</div>
+<div class="large-6 small-centered columns global-background signup-form top-margin fgt-pwd">
+        <h3>forgot password</h3>
+        <h6 class="reg-teach">ENTER YOUR MAIL</h6>
+        <form>
+    <div class="row top-margin ">
+    <div class="large-6 large-centered columns">
+        <input id='sign_up_email' type="text" placeholder="email" />
+    </div>
+    </div>
+    <div class="row">
+    <div class="large-2 large-centered columns l-h">
+    <a href="#" class="button radius reg-teach-sub">signup</a>
+    </div>
+    </div>
+</form>
 </div>
 </template>
 

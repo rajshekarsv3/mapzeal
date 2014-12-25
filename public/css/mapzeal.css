@@ -95,7 +95,7 @@ margin-top: 20px;
 margin-right: 20px;
 }
 
-#menu-list li a
+#menu-list li a,#menu-list-mob li a
 {
 	font-size: 10pt;
 	color: black;
@@ -106,12 +106,12 @@ margin-right: 20px;
     padding-right: 25px;
 }
 
-#menu-list li a:hover
+#menu-list li a:hover,#menu-list-mob li a:hover
 {
 	color:rgb(11, 152, 93);
 }
 
-#menu-list li .login
+#menu-list li .login,#menu-list-mob li .login
 {
 color: white;
 }
@@ -127,6 +127,16 @@ color: white;
 #menu-list li:hover>#learn-menu,#teach-menu
 {
 	background-color: white;
+}
+
+#menu-list-mob li:hover>#learn-menu,#teach-menu
+{
+	background-color: white;
+}
+
+#menu-list-mob li
+{
+	text-align: center;
 }
 
 .top-bar-section ul li
@@ -195,6 +205,11 @@ width: 70px
 .review-bg-color,.about-bg-bolor
 {
 	background-color: rgb(242, 242, 242);
+}
+
+.no-l-h
+{
+	line-height: 0
 }
 
 /*

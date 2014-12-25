@@ -116,7 +116,7 @@
   });
 
   Template.otherLoginOptions.events({
-    'click #btn_facebook': function(){
+    'click #btn_facebook,#link-facebook': function(){
         console.log("hello");
         Meteor.loginWithFacebook({ requestPermissions: ['email']},
         function (error) {
@@ -125,7 +125,7 @@
             }
         });
     },
-    'click #btn_google':function(){
+    'click #btn_google,#link-google':function(){
         Meteor.loginWithGoogle({ requestPermissions: ['email']},
         function (error) {
             if (error) {
@@ -139,9 +139,18 @@ Meteor.startup(function(){
   $(document).ready(function(){
     $(document).foundation();
   });
+
   reCAPTCHA.config({
         publickey: '6LeZpP8SAAAAAL2Bv-uQAz9azAcdsV8wlnNpbCCE'
     });
+  
+  $(document).ready(function()
+  {
+  $('.top-bar-logo').click(function(event){
+  alert('hi');
+  });
+  });
+
 });
 
 
@@ -183,12 +192,6 @@ Router.route('/about', function () {
   this.render('about');
 });
 
-$(document).ready(function()
-{
-$('.top-bar-logo').click(function(event){
-alert('hi');
-});
-});
 
 
 
