@@ -841,22 +841,29 @@ line-height: 30px;
 	color: black;
 }
 
-.form,.signup-form
+.form,.signup-form,.signin-form
 {
+	margin-top: 70px;
 	text-align: center;
 	font-family: varela round;
+	padding-bottom: 100px;
 }
 
-.signup-form ::-webkit-input-placeholder {
+.fgt-pwd
+{
+	padding-bottom: 265px;
+}
+
+.signup-form ::-webkit-input-placeholder,.signin-form ::-webkit-input-placeholder  {
   text-align: center;
 }
-.signup-form ::-moz-placeholder { /* Firefox 19+ */
+.signup-form ::-moz-placeholder,.signin-form ::-moz-placeholder { /* Firefox 19+ */
   text-align: center;
 }
-.signup-form :-ms-input-placeholder {
+.signup-form :-ms-input-placeholder,.signin-form :-ms-input-placeholder {
   text-align: center;
 }
-.signup-form :-moz-placeholder { /* Firefox 18- */
+.signup-form :-moz-placeholder,.signin-form :-moz-placeholder { /* Firefox 18- */
   text-align: center;
 }
 
@@ -916,7 +923,8 @@ form input[type=text]
 	font-family: varela round;
 	font-weight: bold;
 	padding-top: 6px;
-	background-color: #0090CA
+	background-color: #0090CA;
+	line-height:inherit;
 }
 
 .history-margin
@@ -1022,6 +1030,13 @@ form input[type=text]
 	color: darkgray;
 	background-color: rgb(170, 196, 211);;
 }
+
+#footer {
+height:100%;
+margin: 0 auto 0 auto;
+clear:both;
+}
+
 
 
 

@@ -132,7 +132,6 @@ Meteor.startup(function(){
   $(document).ready(function(){
     $(document).foundation();
   });
-  
 });
 
 
