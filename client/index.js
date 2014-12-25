@@ -62,6 +62,13 @@
       }
     ,
     'click #btn_sign_up': function(){
+        Meteor.call('formSubmissionMethod', formData, captchaData, function(error, result) {
+            if (error) {
+                console.log('There was an error: ' + error.reason);
+            } else {
+                console.log('Success!');
+            }
+        });
       Accounts.createUser({
       password: $("#sign_up_password").val(),
       emails: [
@@ -132,8 +139,12 @@ Meteor.startup(function(){
   $(document).ready(function(){
     $(document).foundation();
   });
-  
+  reCAPTCHA.config({
+        publickey: '6LeZpP8SAAAAAL2Bv-uQAz9azAcdsV8wlnNpbCCE'
+    });
 });
+
+
 
 
 //Routing
