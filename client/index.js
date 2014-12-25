@@ -138,18 +138,15 @@
 Meteor.startup(function(){
   $(document).ready(function(){
     $(document).foundation();
+    $('.top-bar-logo').click(function(event){
+    alert('hi');
+    });
   });
 
   reCAPTCHA.config({
         publickey: '6LeZpP8SAAAAAL2Bv-uQAz9azAcdsV8wlnNpbCCE'
     });
-  
-  $(document).ready(function()
-  {
-  $('.top-bar-logo').click(function(event){
-  alert('hi');
-  });
-  });
+
 
 });
 
