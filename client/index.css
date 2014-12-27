@@ -201,6 +201,7 @@ fieldset legend
 	{
 		width: 15em;
 	}
+
 }
 
 
@@ -216,6 +217,10 @@ fieldset legend
 	{
 		margin: 0;
 	}
+	.footer-content-second-row
+	{
+		margin-top: 0;
+	}	
 }
 
 @media screen and (max-width: 70em)
@@ -572,7 +577,8 @@ color:rgb(11, 152, 93);
 
 .footer-content-second-row
 {
-	margin-left:40px;
+	margin-top: 50px;
+	margin-left:10px;
 	font-size: 14px;
 }
 
@@ -1003,18 +1009,19 @@ form input[type=text]
 	border-left: 4px solid rgb(219, 219, 219);
 }
 
-.about-list-block
+.r-border
 {
-	display: block;
-	height: 50px;
-	line-height: 3;
+	border-right: 4px solid rgb(219, 219, 219);
 }
 
 .about-list-block a
 {
-	float: right;
-	padding-right: 20px;
 	color: black;
+}
+
+.about-list-a
+{
+	text-align: right;
 }
 
 .top-margin-abt
@@ -1022,13 +1029,18 @@ form input[type=text]
 	margin-top: 40px;
 }
 
- .about-list-block:hover
+.active
+{
+
+}
+
+ .tabs dd.active a, .tabs .tab-title.active a
 {
 	border-top: 3px solid white;
 	border-bottom: 3px solid white;
 	border-right: 3px solid white;
-	color: darkgray;
-	background-color: rgb(170, 196, 211);;
+	color: black;
+	background-color: rgb(170, 196, 211);
 }
 
 #footer {
@@ -1036,6 +1048,26 @@ height:100%;
 margin: 0 auto 0 auto;
 clear:both;
 }
+
+.bg-image-large
+{
+	background: url("images/Banner.jpg");	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.bg-image-medium
+{
+	background: url("images/Banner-Medium.jpg");	
+	background-repeat: no-repeat;
+}
+
+.bg-image-small
+{
+	background: url("images/Banner-Small.jpg");	
+	background-repeat: no-repeat;
+}
+
 
 
 
