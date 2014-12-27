@@ -62,26 +62,55 @@
       }
     ,
     'click #btn_sign_up': function(){
-        Meteor.call('formSubmissionMethod', formData, captchaData, function(error, result) {
+      // Validation
+
+       
+
+
+       try{
+               
+                if( ! $("#sign_up_email").val())
+                    throw { msg : "Please Enter Email id" , elem : "#sign_up_email"}
+                if( ! $("#sign_up_password").val())
+                    throw { msg : "Password cannot be empty" , elem : "#sign_up_password"}
+                        
+
+
+            }
+            catch(e){
+                console.log(e);
+                alert(e.msg);
+                setTimeout(function(){$(e.elem).focus()},0);
+                return;
+            }
+
+      //get the captcha data
+
+        var captchaData = {
+            captcha_challenge_id: Recaptcha.get_challenge(),
+            captcha_solution: Recaptcha.get_response()
+        };
+
+        Meteor.call('formSubmissionMethod', captchaData, function(error, result) {
             if (error) {
                 console.log('There was an error: ' + error.reason);
             } else {
-                console.log('Success!');
+                Accounts.createUser({
+                  password: $("#sign_up_password").val(),
+                  emails: [
+                    {address: $("#sign_up_email").val(), verified: true}
+                    // Other required field values can go here
+                    ]
+                  },function(){
+                    Router.go('/');
+                  }, function(error) {
+                    if (error) {
+                      console.log(error);
+                    }
+                  });
             }
         });
-      Accounts.createUser({
-      password: $("#sign_up_password").val(),
-      emails: [
-        {address: $("#signup-name").val(), verified: true}
-        // Other required field values can go here
-        ]
-      },function(){
-        Session.set("current_template", "index_content");
-      }, function(error) {
-        if (error) {
-          console.log(error);
-        }
-      });
+      
 
 
     }
@@ -137,8 +166,11 @@
 
 Meteor.startup(function(){
   $(document).ready(function(){
+    console.log("hi");
+    console.log($('.top-bar-logo').text());
     $(document).foundation();
-    $('.top-bar-logo').click(function(event){
+    $('.top-bar-logo').click(function(){
+      console.log("hi");
     alert('hi');
     });
   });
@@ -146,6 +178,9 @@ Meteor.startup(function(){
   reCAPTCHA.config({
         publickey: '6LeZpP8SAAAAAL2Bv-uQAz9azAcdsV8wlnNpbCCE'
     });
+
+  
+  
 
 
 });

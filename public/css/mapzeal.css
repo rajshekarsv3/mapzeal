@@ -1,11 +1,12 @@
 
 @font-face {
+	font-family: varela_round;
     src: url(VarelaRound-Regular.ttf);
 }
 
 body
 {
-	font-family: varela round;
+	font-family: varela_round;
 }
 
 .heading-image
@@ -99,7 +100,7 @@ margin-right: 20px;
 {
 	font-size: 10pt;
 	color: black;
-	font-family: varela round;
+	font-family: varela_round;
 	text-transform: uppercase;
 	font-weight: normal;
 	padding-left: 25px;
@@ -251,7 +252,7 @@ width: 70px
 
 /*
 
-Fonts Used: Varela Round (google web font)
+Fonts Used: varela_round (google web font)
 
 Body: 3.5pt
 Body Header: 3.8 (Caps) 

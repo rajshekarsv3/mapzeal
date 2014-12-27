@@ -5,7 +5,7 @@ Meteor.startup(function() {
 });
 
 Meteor.methods({
-    formSubmissionMethod: function(formData, captchaData) {
+    formSubmissionMethod: function(captchaData) {
 
         var verifyCaptchaResponse = reCAPTCHA.verifyCaptcha(this.connection.clientAddress, captchaData);
 

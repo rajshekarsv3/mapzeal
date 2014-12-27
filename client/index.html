@@ -249,7 +249,7 @@
         <form>
     <div class="row top-margin ">
     <div class="large-6 large-centered columns">
-        <input id='sign_up_email' type="text" placeholder="email" />
+        <input id='sign_up_email' type="email" placeholder="email" />
     </div>
     </div>
     <div class="row">
@@ -257,14 +257,16 @@
         <input id='sign_up_password' type="password" placeholder="password" />
     </div>
     </div>
-    <div class="row">
+   <!--  <div class="row">
     <div class="large-6 large-centered columns">
         <input id="checkbox1" type="checkbox"><label for="checkbox1">I am not a robot</label>
+        
       </div>
-    </div>
+    </div> -->
+    {{> reCAPTCHA}}
     <div class="row">
     <div class="large-2 large-centered columns l-h">
-    <a href="#" class="button radius reg-teach-sub">signup</a>
+    <a href="#" id="btn_sign_up" class="button radius reg-teach-sub">signup</a>
     </div>
     </div>
     <div class="row">
@@ -303,7 +305,7 @@
         <form>
     <div class="row top-margin ">
     <div class="large-6 large-centered columns">
-        <input id='sign_up_email' type="text" placeholder="email" />
+        <input id='user_email' type="text" placeholder="email" />
     </div>
     </div>
     <div class="row">
