@@ -131,11 +131,20 @@
     
 </template>
 <template name="userRightBar">
-    
-      <li><a href='learn'>Learn</a></li>
-      <li><a href='teach'>Teach</a></li>               
-      <li><a>{{displayName}}</a></li>       
-      <li><a id="btn_logout">logout</a></li>
+      <ul class="right show-for-large-up" id="menu-list">
+      <li><a id="learn-menu" href='learn'>Learn</a></li> 
+      <li><a id="teach-menu" href='teach'>Teach</a></li>      
+      <li><a>{{displayName}}</a></li>            
+      <li><a id="btn_logout" class="button radius login">logout</a></li> 
+      </ul>  
+
+      <ul class="right show-for-small-only" id="menu-list-mob">
+      <li class="small-12 columns"><a id="learn-menu-small" href='learn'>Learn</a></li> 
+      <li class="small-12 columns"><a id="teach-menu-small " href='teach'>Teach</a></li>      
+      <li class="small-12 columns" ><a>{{displayName}}</a></li>            
+      <li class="small-12 columns" ><a id="btn_logout" class="button radius login">logout</a></li> 
+      </ul> 
+ 
     
 </template>
 
@@ -341,6 +350,8 @@
 </div>
 </div>
 </template>
+
+
 <!--
 <template name="loginButtons">
   <div id="login-buttons" class="login-buttons-dropdown-align-{{align}}">
