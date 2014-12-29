@@ -26,7 +26,7 @@ h1
 {
 	height:400px;
 	width: 100%;
-	background-color: red;
+	background-color: white;
 	display: table;
 }
 .home-top
@@ -243,10 +243,14 @@ width: 70px
 	float: right;
 }
 
-
 .gp-float
 {
 	float: left;
+}
+
+.align-center
+{
+	text-align: center;
 }
 
 

@@ -225,6 +225,12 @@ Router.route('/about', function () {
 });
 
 
+Router.route('/404Error', function () {
+  this.render('404Error');
+});
+
+
+
 
 
 
