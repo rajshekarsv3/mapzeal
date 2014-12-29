@@ -5,11 +5,6 @@
 
 
 
-  Accounts.ui.config({
-
-    passwordSignupFields: 'USERNAME_AND_EMAIL'
-  });
-
 
   Template.home.helpers({
       activeTemplate: function(){
@@ -64,13 +59,14 @@
     'click #btn_sign_up': function(){
       // Validation
 
-       
+       var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+       //|| ! regex.test($('#sign_up_email').val())
 
 
        try{
                
-                if( ! $("#sign_up_email").val())
-                    throw { msg : "Please Enter Email id" , elem : "#sign_up_email"}
+                if( ! $("#sign_up_email").val() )
+                    throw { msg : "Please Enter valid Email id" , elem : "#sign_up_email"}
                 if( ! $("#sign_up_password").val())
                     throw { msg : "Password cannot be empty" , elem : "#sign_up_password"}
                         
@@ -78,7 +74,7 @@
 
             }
             catch(e){
-                console.log(e);
+
                 alert(e.msg);
                 setTimeout(function(){$(e.elem).focus()},0);
                 return;
@@ -93,19 +89,22 @@
 
         Meteor.call('formSubmissionMethod', captchaData, function(error, result) {
             if (error) {
-                console.log('There was an error: ' + error.reason);
+                Recaptcha.reload()
             } else {
                 Accounts.createUser({
                   password: $("#sign_up_password").val(),
                   emails: [
-                    {address: $("#sign_up_email").val(), verified: true}
+                    {address: $("#sign_up_email").val()}
                     // Other required field values can go here
                     ]
                   },function(){
                     Router.go('/');
+                    //console.log(Meteor.User());
                   }, function(error) {
                     if (error) {
-                      console.log(error);
+                      console.log("hi");
+                      
+                      $("#recaptcha_reload").click();
                     }
                   });
             }

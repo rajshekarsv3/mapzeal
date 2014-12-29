@@ -10,6 +10,7 @@ Meteor.methods({
         var verifyCaptchaResponse = reCAPTCHA.verifyCaptcha(this.connection.clientAddress, captchaData);
 
         if (!verifyCaptchaResponse.success) {
+        	
             console.log('reCAPTCHA check failed!', verifyCaptchaResponse);
             throw new Meteor.Error(422, 'reCAPTCHA Failed: ' + verifyCaptchaResponse.error);
         } else
@@ -18,5 +19,8 @@ Meteor.methods({
         //do stuff with your formData
 
         return true;
-    }
+    },
+
+
 });
+
