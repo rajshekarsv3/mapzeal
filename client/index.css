@@ -201,6 +201,7 @@ fieldset legend
 	{
 		width: 15em;
 	}
+
 }
 
 
@@ -215,6 +216,14 @@ fieldset legend
 	#menu-list
 	{
 		margin: 0;
+	}
+	.footer-content-second-row
+	{
+		margin-top: 0;
+	}	
+		.abt-small
+	{
+		margin-top: -130px!important;
 	}
 }
 
@@ -572,7 +581,8 @@ color:rgb(11, 152, 93);
 
 .footer-content-second-row
 {
-	margin-left:40px;
+	margin-top: 50px;
+	margin-left:10px;
 	font-size: 14px;
 }
 
@@ -1003,18 +1013,19 @@ form input[type=text]
 	border-left: 4px solid rgb(219, 219, 219);
 }
 
-.about-list-block
+.r-border
 {
-	display: block;
-	height: 50px;
-	line-height: 3;
+	border-right: 4px solid rgb(219, 219, 219);
 }
 
 .about-list-block a
 {
-	float: right;
-	padding-right: 20px;
 	color: black;
+}
+
+.about-list-a
+{
+	text-align: right;
 }
 
 .top-margin-abt
@@ -1022,13 +1033,18 @@ form input[type=text]
 	margin-top: 40px;
 }
 
- .about-list-block:hover
+.active
+{
+
+}
+
+ .tabs dd.active a, .tabs .tab-title.active a
 {
 	border-top: 3px solid white;
 	border-bottom: 3px solid white;
 	border-right: 3px solid white;
-	color: darkgray;
-	background-color: rgb(170, 196, 211);;
+	color: black;
+	background-color: rgb(170, 196, 211);
 }
 
 #footer {
@@ -1036,6 +1052,132 @@ height:100%;
 margin: 0 auto 0 auto;
 clear:both;
 }
+
+.bg-image-large
+{
+	background: url("images/Banner.jpg");	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.bg-image-medium
+{
+	background: url("images/Banner-Medium.jpg");	
+	background-repeat: no-repeat;
+}
+
+.bg-image-small
+{
+	background: url("images/Banner-Small.jpg");	
+	background-repeat: no-repeat;
+}
+
+/* 404 Error */
+
+.bg-river
+{
+	background: url("images/pattern.png");
+	height: 10em;
+}
+
+.error-margin
+{
+	margin-top: 100px;
+}
+.ship
+{
+	margin-left: 30px;
+	margin-bottom: -50px;
+	margin-top: 50px;
+	position: relative;
+	top: 10px;
+	z-index: 1;
+}
+
+.errortooltip {
+	margin-left: 150px;
+	height: 100px;
+	width: 500px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #1496bb;
+  display: block;
+  opacity: 0;
+  padding: 20px;
+  pointer-events: none;
+  position: absolute;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+     -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+      -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+       -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.errortooltip:before {
+  content: " ";
+  display: block;
+  height: 40px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}  
+
+/* CSS Triangles - see Trevor's post */
+ .errortooltip:after {
+  border-top: solid transparent 10px;
+border-bottom: solid transparent 10px;
+border-right: solid #1496bb 10px;
+top: 40px;
+content: " ";
+height: 0;
+left: 0.5%;
+margin-left: -13px;
+position: absolute;
+width: 0;
+}
+  
+ .errortooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+   -moz-transform: translateY(0px);
+   -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+     transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .tooltip {
+  display: none;
+}
+
+.lte8 .wrapper:hover .tooltip {
+  display: block;
+}
+
+.author
+{
+	float: right;
+	margin: -1rem;
+}
+
+.errorCode
+{
+	font-size: 40px;
+}
+
+.error-txt-color
+{
+	color: #1496bb;
+}
+.code-error-margin
+{
+	margin-top: 153px;
+	text-align: center;
+}
+
+
 
 
 

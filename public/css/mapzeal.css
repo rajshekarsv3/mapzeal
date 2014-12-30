@@ -26,7 +26,7 @@ h1
 {
 	height:400px;
 	width: 100%;
-	background-color: red;
+	background-color: white;
 	display: table;
 }
 .home-top
@@ -70,7 +70,7 @@ fieldset input[type="text"]:focus,input[type="password"]:focus, textarea:focus
 }
 .left-margin
 {
-	padding-left: 110px;
+	padding-left: 40px;
 }
 div .author-name
 {
@@ -197,6 +197,31 @@ width: 70px
 	margin: 0;
 }
 
+.footer-logo-icon
+{
+	float: right;
+}
+
+.no-l-r-pad-mar
+{
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.no-r-pad-mar
+{
+	padding-right: 0;
+	margin-right: 0;
+}
+
+.no-l-pad-mar
+{
+	padding-left: 0;
+	margin-left: 0
+}
+
 .image-tile-size
 {
 	height:60px;
@@ -212,6 +237,22 @@ width: 70px
 {
 	line-height: 0
 }
+
+.fb-float
+{
+	float: right;
+}
+
+.gp-float
+{
+	float: left;
+}
+
+.align-center
+{
+	text-align: center;
+}
+
 
 /*
 

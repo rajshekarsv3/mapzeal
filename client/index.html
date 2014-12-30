@@ -39,7 +39,7 @@
     <ul class="title-area">       
       <li class="name">  
          <div id="logo">
-        <a href='/'><img class="top-bar-logo" src="/images/logo_header.png" />         
+        <a href='/'><img class="top-bar-logo" src="/images/logo_header.png"/>         
         </a>       
     </div>
       </li>      
@@ -59,7 +59,8 @@
   <footer>
     <div class="rows" id="footer">
     <div class="medium-12 columns footer">
-    <div class="large-1 medium-1 small-2 columns footer-content">
+    <div class="medium-7 columns">
+    <div class="medium-2 small-6 columns footer-content">
       <ul class="learn-list">
       <li><a>Learn</a></li>
       <li><a>Course</a></li>
@@ -67,13 +68,13 @@
       <li><a>Blogs</a></li>
       </ul>
     </div>
-     <div class="large-2 medium-1 small-2 columns footer-content">
+     <div class="medium-3 small-5 columns footer-content">
       <ul class="author-list">
       <li><a>Teach</a></li>
       <li><a>Become Author</a></li>
       </ul>
     </div>
-    <div class="large-2 medium-1 small-3 columns footer-content">
+    <div class="medium-3 small-5 columns footer-content">
       <ul class="community-list">
       <li><a>Community</a></li>
       <li><a>Suggest Leason</a></li>
@@ -81,7 +82,7 @@
       <li><a>Discuss</a></li>
       </ul>
     </div>
-    <div class="large-2 medium-1 small-3 columns footer-content">
+    <div class="medium-2 small-5 columns end footer-content abt-small">
       <ul class="about-list">
       <li><a href="about">About</a></li>
       <li><a>About Us</a></li>
@@ -89,7 +90,11 @@
       <li><a>Support</a></li>
       </ul>
     </div>
-    <div class="medium-6 columns footer-content left-margin">
+    </div>
+    <div class="medium-1 small-5  columns footer-content no-l-pad-mar">
+        <div class="footer-logo-icon"><img src="/images/mapzeal_logo_footer.png"/></div>
+    </div>
+    <div class="medium-4 small-9 columns footer-content no-l-r-pad-mar">
       <span class="footer-logo">mapzeal</span>
       <p class="footer-logo-content text-justify">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout .The point of using Loren Ipsum is that it has a more or less normal distribution  of letters,as opposed to using 'Content here,content here',making it look like readable englidh.Many Desktop publishing packages and web page editorsnow use Loren Ipsum</p>
       <div class="smGlobalBtn  medium-8 columns">
@@ -235,7 +240,7 @@
     </div>
     </div>
     <div class="row">
-    <div class="small-5 small-centered columns">
+    <div class="meidum-6 medium-centered columns bottom">
      {{> otherLoginOptions}}
     </div>
     </div>
@@ -247,7 +252,6 @@
 
 
 <template name="signup">
-
     <div class="large-6 small-centered columns global-background signup-form top-margin ">
         <h3>signup</h3>
         <h6 class="reg-teach">FOR AN ACCOUNT</h6>
@@ -268,7 +272,9 @@
         
       </div>
     </div> -->
+    <div class="medium-8 columns medium-centered">
     {{> reCAPTCHA}}
+    </div>    
     <div class="row">
     <div class="large-2 large-centered columns l-h">
     <a href="#" id="btn_sign_up" class="button radius reg-teach-sub">signup</a>
@@ -280,7 +286,7 @@
     </div>
     </div>
     <div class="row">
-    <div class="small-5 small-centered columns">
+    <div class="large-6 large-centered columns">
      {{> otherLoginOptions}}
     </div>
     </div>
@@ -290,12 +296,16 @@
 </template>
 
 <template name="otherLoginOptions">
-<div class="small-6 columns">
+<div class="large-6 medium-6 small-6 columns">
+<div class="fb-float">
   <a herf="#" id="btn_facebook" class="social-link"><i class="fi-social-facebook signup-icons"></i></a><a href="#" id="link-facebook" class="social-text-link">facebook</a>
   </div>
-  <div class="small-6 columns bottom">
+  </div>
+  <div class="large-6 medium-6 small-6 columns">
+  <div class="gp-float">
   <a href="#" id="btn_google"><i class="fi-social-google-plus signup-icons"></i></a>
   <a href="#" id="link-google" class="social-text-link">google</a>
+  </div>
   </div>
 </template>
 
@@ -319,9 +329,9 @@
 </template>
 
 <template name="about">
-  <div class="rows learn-teach-interactive-content global-background">
+  <div class="rows learn-teach-interactive-content bg-image-large">
 <div class="row center">
-  <div class="small-12 small-centered columns">
+  <div class="large-10 medium-4 small-8 small-centered columns">
   <h2 class="heading">we are awesome people doing awesome stuffs</h2>
   </div>
   <div class="small-6  small-centered columns">
@@ -330,7 +340,7 @@
   </div>
 </div>
 <div class="medium-12 columns no-pad-margin about-bg-bolor">
-<div class="medium-3 columns  no-pad-margin">
+<!--<div class="medium-3 columns  no-pad-margin">
 <div class="top-margin-abt ">
 <div class="medium-12 columns about-list-block">
 <a>ABOUT</a>
@@ -346,6 +356,23 @@
 <h6 class="text-justify bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
 <h6 class="text-justify bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
 <h6 class="text-justify bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
+</div>
+</div>-->
+<div class="top-margin-abt ">
+<dl class="tabs vertical r-border" data-tab>
+  <dd class="active"><a class="about-list-a"  href="#panel1">ABOUT</a></dd>
+  <dd><a class="about-list-a" href="#panel2">JOBS</a></dd>
+</dl>
+<div class="tabs-content vertical">
+  <div class="content active" id="panel1">
+   <h4>HISTORY</h4>
+<h6 class="text-justify bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
+<h6 class="text-justify bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
+<h6 class="text-justify bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
+  </div>
+  <div class="content" id="panel2">
+    <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+  </div>
 </div>
 </div>
 </div>
