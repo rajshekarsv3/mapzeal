@@ -92,11 +92,8 @@
                 Recaptcha.reload()
             } else {
                 Accounts.createUser({
-                  password: $("#sign_up_password").val(),
-                  emails: [
-                    {address: $("#sign_up_email").val()}
-                    // Other required field values can go here
-                    ]
+                  email: $("#sign_up_email").val(),
+                  password: $("#sign_up_password").val()
                   },function(){
                     Router.go('/');
                     //console.log(Meteor.User());
@@ -223,6 +220,26 @@ Router.route('/about', function () {
   this.render('about');
 });
 
+
+Router.map(function () {
+
+
+    this.route('verifyEmail', {
+        controller: 'AccountController',
+        path: '/verify-email/:token',
+        action: 'verifyEmail'
+    });
+
+    this.route('verified', {
+        path: '/verified',
+        template: 'verified'
+    });
+
+    this.route('checkemail', {
+        path: '/checkemail',
+        template: 'checkemail'
+    });
+});
 
 
 
