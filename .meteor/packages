@@ -15,4 +15,5 @@ iron:router
 service-configuration
 zurb-foundation
 altapp:recaptcha
+email
 
