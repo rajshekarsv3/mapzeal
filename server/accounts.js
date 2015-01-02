@@ -55,7 +55,7 @@ Meteor.startup(function() {
 
   Accounts.validateLoginAttempt(function(attempt){  
       if(attempt.user && attempt.user.emails && !attempt.user.emails[0].verified ) {
-        throw new Meteor.Error(499, 'Please check your email and confirm your account.<br/>Not received??');
+        throw new Meteor.Error(499, 'Please check your email and confirm your account.');
         //Router.go('/');
         //alert('hey');
         console.log('not verified');
