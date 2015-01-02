@@ -17,6 +17,7 @@
     'click #btn_sign_in': function(){
       var username = $("#username").val();
       var password = $("#password").val();
+      
       Meteor.loginWithPassword(username,password,function(err){
         if(err)
           alert(err['reason']+' Please try again');
@@ -40,6 +41,8 @@
         return user.username;
       if (user.emails && user.emails[0] && user.emails[0].address)
         return user.emails[0].address;
+      if (user.services.facebook && user.services.facebook.name )
+        return user.services.facebook.name 
 
       return '';
     }
@@ -60,12 +63,12 @@
       // Validation
 
        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-       //|| ! regex.test($('#sign_up_email').val())
+       
 
 
        try{
                
-                if( ! $("#sign_up_email").val() )
+                if( ! $("#sign_up_email").val() || ! regex.test($('#sign_up_email').val()))
                     throw { msg : "Please Enter valid Email id" , elem : "#sign_up_email"}
                 if( ! $("#sign_up_password").val())
                     throw { msg : "Password cannot be empty" , elem : "#sign_up_password"}
@@ -87,23 +90,26 @@
             captcha_solution: Recaptcha.get_response()
         };
 
+        var formData = {
+          username: $("#sign_up_email").val(),
+          password: $("#sign_up_password").val()
+        }
+
         Meteor.call('formSubmissionMethod', captchaData, function(error, result) {
             if (error) {
-                Recaptcha.reload()
+                Recaptcha.reload();
+                alert("Please Confirm that you are not robot by entering Captcha")
             } else {
-                Accounts.createUser({
-                  email: $("#sign_up_email").val(),
-                  password: $("#sign_up_password").val()
-                  },function(){
-                    Router.go('/');
-                    //console.log(Meteor.User());
-                  }, function(error) {
-                    if (error) {
-                      console.log("hi");
-                      
-                      $("#recaptcha_reload").click();
-                    }
-                  });
+              console.log("inside ")
+              Meteor.call('accountCreationMethod', formData,function(error,result){
+                  if(error) {
+                    console.log("inseide eror");
+                  }else
+                  {
+                    console.log("inseide success");
+                  }
+              });
+                
             }
         });
       
@@ -161,6 +167,11 @@
   });
 
 Meteor.startup(function(){
+
+
+  
+
+  
   $(document).ready(function(){
     console.log("hi");
     console.log($('.top-bar-logo').text());
