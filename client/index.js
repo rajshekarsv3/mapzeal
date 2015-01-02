@@ -103,10 +103,15 @@
               console.log("inside ")
               Meteor.call('accountCreationMethod', formData,function(error,result){
                   if(error) {
-                    console.log("inseide eror");
+                    if(error.error==403 && error.reason== "Email already exists.")
+                      alert("Email Id already exists . Please use Login page to continue");
+                    else
+                      alert("Something went wrong . Please contact our support team");
+                    Router.go('/login');
                   }else
                   {
-                    console.log("inseide success");
+                    alert("Account Created successfully. Please Check your email for verification link");
+                    Router.go('/');
                   }
               });
                 
@@ -263,7 +268,22 @@ Router.configure({
 });
 
 
+//Verify Email
 
+Template.index_content.created = function() {
+  if (Accounts._verifyEmailToken) {
+    Accounts.verifyEmail(Accounts._verifyEmailToken, function(err) {
+      console.log(err);
+      if (err != null) {
+        if (err.message = 'Verify email link expired [403]') {
+          console.log('Sorry this verification link has expired.')
+        }
+      } else {
+        console.log('Thank you! Your email address has been confirmed.')
+      }
+    });
+  }
+};
 
 
 
