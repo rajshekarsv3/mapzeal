@@ -3,7 +3,6 @@ accounts-facebook@1.0.2
 accounts-google@1.0.2
 accounts-oauth@1.1.2
 accounts-password@1.0.4
-accounts-ui-unstyled@1.1.4
 altapp:recaptcha@1.2.0
 application-configuration@1.0.3
 autopublish@1.0.1

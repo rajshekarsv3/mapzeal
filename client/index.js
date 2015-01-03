@@ -232,6 +232,14 @@ Router.route('/forgotPassword', function () {
   this.render('forgotPassword');
 });
 
+Router.route('/resetPassword', function () {
+  if(ccounts._resetPasswordToken)
+    this.render('resetPassword');
+  else
+    this.render('/')
+});
+
+
 Router.route('/about', function () {
   this.render('about');
 });
@@ -239,6 +247,7 @@ Router.route('/about', function () {
 
 Router.map(function () {
 
+    
 
     this.route('verifyEmail', {
         controller: 'AccountController',
@@ -284,6 +293,104 @@ Template.index_content.created = function() {
     });
   }
 };
+
+
+//Forgot Password
+
+
+Template.forgotPassword.events({
+  'click #btn_send_recovery_link': function(e, t) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    e.preventDefault();
+ 
+    var email = $.trim($('#forgotPassWordEmail').val().toLowerCase());
+    
+     try{
+         
+          if( ! email || ! regex.test(email))
+              throw { msg : "Please Enter valid Email id" , elem : "#forgotPassWordEmail"}
+          
+                  
+
+
+      }
+      catch(e){
+
+          alert(e.msg);
+          setTimeout(function(){$(e.elem).focus()},0);
+          return;
+      }
+
+
+    
+ 
+      Accounts.forgotPassword({email: email}, function(err) {
+        if (err) {
+          if (err.message === 'User not found [403]') {
+            alert('This email does not exist.');
+          } else {
+            alert('We are sorry but something went wrong.');
+          }
+        } else {
+          alert('Email Sent. Check your mailbox.');
+        }
+      });
+ 
+    
+    return false;
+  },
+});
+
+
+//Reset Password
+
+
+if (Accounts._resetPasswordToken) {
+  Router.go('/resetPassword');
+}
+ 
+
+ 
+Template.resetPassword.events({
+  'click #btn_reset_password': function(e, t) {
+    e.preventDefault();
+    
+    var password = $('#newPassword').val(),
+        passwordConfirm = $('#confirmPassword').val();
+ 
+    
+    try{
+               
+                if( ! password)
+                    throw { msg : "Please Enter New password" , elem : "#newPassword"}
+                if( ! passwordConfirm)
+                    throw { msg : "Password Confirm password" , elem : "#confirmPassword"}
+                if( password != passwordConfirm)
+                    throw { msg : "Password Mismatch" , elem : "#newPassword"}
+                        
+
+
+        }
+        catch(e){
+
+            alert(e.msg);
+            setTimeout(function(){$(e.elem).focus()},0);
+            return;
+        }
+
+
+      Accounts.resetPassword(Session.get('resetPassword'), password, function(err) {
+        if (err) {
+          alert('We are sorry but something went wrong.');
+        } else {
+          alert('Your password has been changed. Welcome back!');
+          Router.go('/');
+        }
+      });
+    
+    return false;
+  }
+});
 
 
 

@@ -317,12 +317,37 @@
         <form>
     <div class="row top-margin ">
     <div class="large-6 large-centered columns">
-        <input id='user_email' type="text" placeholder="email" />
+        <input id='forgotPassWordEmail' type="text" placeholder="email" />
     </div>
     </div>
     <div class="row">
-    <div class="large-2 large-centered columns l-h">
-    <a href="#" class="button radius reg-teach-sub">signup</a>
+    <div class="large-5 large-centered columns l-h">
+    <a  id='btn_send_recovery_link' class="button radius reg-teach-sub">Send Recovery link</a>
+    </div>
+    </div>
+</form>
+</div>
+</template>
+
+
+<template name="resetPassword">
+<div class="large-6 small-centered columns global-background signup-form top-margin fgt-pwd">
+        <h3>Reset password</h3>
+        
+        <form>
+    <div class="row top-margin ">
+    <div class="large-6 large-centered columns">
+        <input id='newPassword' type="text" placeholder="New Password" />
+    </div>
+    </div>
+    <div class="row top-margin ">
+    <div class="large-6 large-centered columns">
+        <input id='confirmPassword' type="text" placeholder="Confirm Password" />
+    </div>
+    </div>
+    <div class="row">
+    <div class="large-5 large-centered columns l-h">
+    <a  id='btn_reset_password' class="button radius reg-teach-sub">Reset Password</a>
     </div>
     </div>
 </form>
