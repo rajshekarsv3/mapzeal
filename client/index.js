@@ -98,7 +98,10 @@
         Meteor.call('formSubmissionMethod', captchaData, function(error, result) {
             if (error) {
                 Recaptcha.reload();
-                alert("Please Confirm that you are not robot by entering Captcha")
+                alert("Please Confirm that you are not robot by entering Captcha");
+                $("#sign_up_email").val('');
+                $("#sign_up_password").val('');
+
             } else {
               console.log("inside ")
               Meteor.call('accountCreationMethod', formData,function(error,result){
@@ -240,32 +243,33 @@ Router.route('/resetPassword/:_token', function () {
     //this.render('/')
 });
 
+Router.route('/verifyEmail/:_token', function () {
+ 
+    Accounts.verifyEmail(this.params._token, function(err) {
+      console.log(err);
+      if (err != null) {
+        if (err.message = 'Verify email link expired [403]') {
+          alert('Sorry this verification link has expired.');
+        }
+      } else {
+        alert('Thank you! Your email address has been confirmed.');
+        Router.go('/');
+      }
+    });
+    
+    //this.render('index_content')
+   // this.render('verifyEmail');
+  //else
+    //this.render('/')
+});
+
 
 Router.route('/about', function () {
   this.render('about');
 });
 
 
-Router.map(function () {
 
-    
-
-    this.route('verifyEmail', {
-        controller: 'AccountController',
-        path: '/verify-email/:token',
-        action: 'verifyEmail'
-    });
-
-    this.route('verified', {
-        path: '/verified',
-        template: 'verified'
-    });
-
-    this.route('checkemail', {
-        path: '/checkemail',
-        template: 'checkemail'
-    });
-});
 
 Router.route('/404Error', function () {
   this.render('404Error');
@@ -345,10 +349,6 @@ Template.forgotPassword.events({
 
 //Reset Password
 
-
-if (Accounts._resetPasswordToken) {
-  Router.go('/resetPassword');
-}
  
 
  
