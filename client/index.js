@@ -232,11 +232,12 @@ Router.route('/forgotPassword', function () {
   this.render('forgotPassword');
 });
 
-Router.route('/resetPassword', function () {
-  if(ccounts._resetPasswordToken)
+Router.route('/resetPassword/:_token', function () {
+ 
+    Session.set('_resetPasswordToken',this.params._token)
     this.render('resetPassword');
-  else
-    this.render('/')
+  //else
+    //this.render('/')
 });
 
 
@@ -377,9 +378,9 @@ Template.resetPassword.events({
             setTimeout(function(){$(e.elem).focus()},0);
             return;
         }
+        console.log(Session.get('_resetPasswordToken'));
 
-
-      Accounts.resetPassword(Session.get('resetPassword'), password, function(err) {
+      Accounts.resetPassword(Session.get('_resetPasswordToken'), password, function(err) {
         if (err) {
           alert('We are sorry but something went wrong.');
         } else {
