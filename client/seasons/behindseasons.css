@@ -1,0 +1,55 @@
+.season-icons p
+{
+font-size: 10pt;
+color: rgb(165, 165, 165);
+margin-top: 20px;
+}
+
+.season-icons img
+{
+	margin-top: 20px;
+}
+
+.top-icons i
+{
+color:rgb(165, 165, 165);
+font-size: 18pt; 
+}
+
+.play
+{
+	background-color: #021F35;
+	display: table;
+}
+
+.play i
+{
+	color: white;
+	font-size: 72pt;
+}
+
+.play-anchor
+{
+	vertical-align: middle;
+display: table-cell;
+}
+
+.discussion h5
+{
+	color: black;
+}
+
+.discussion p
+{
+	font-size: 11pt;
+}
+
+.discussion
+{
+	margin-top: 50px;
+}
+
+.discuss-margin
+{
+	margin-top: 40px;
+}
