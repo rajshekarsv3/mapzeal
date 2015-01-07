@@ -10,7 +10,7 @@ accounts-base
 accounts-password
 accounts-facebook
 accounts-google
-accounts-ui-unstyled
+
 iron:router
 service-configuration
 zurb-foundation
