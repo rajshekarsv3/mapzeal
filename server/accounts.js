@@ -95,7 +95,8 @@ Meteor.methods({
                   email: formData.username,
                   password: formData.password
                   });
-    }
+    },
+    
 
 
 });

@@ -3,7 +3,7 @@
   
 
 
-
+  var email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 
   Template.home.helpers({
@@ -62,13 +62,13 @@
     'click #btn_sign_up': function(){
       // Validation
 
-       var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+       
        
 
 
        try{
                
-                if( ! $("#sign_up_email").val() || ! regex.test($('#sign_up_email').val()))
+                if( ! $("#sign_up_email").val() || ! email_regex.test($('#sign_up_email').val()))
                     throw { msg : "Please Enter valid Email id" , elem : "#sign_up_email"}
                 if( ! $("#sign_up_password").val())
                     throw { msg : "Password cannot be empty" , elem : "#sign_up_password"}
@@ -305,14 +305,14 @@ Template.index_content.created = function() {
 
 Template.forgotPassword.events({
   'click #btn_send_recovery_link': function(e, t) {
-    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    
     e.preventDefault();
  
     var email = $.trim($('#forgotPassWordEmail').val().toLowerCase());
     
      try{
          
-          if( ! email || ! regex.test(email))
+          if( ! email || ! email_regex.test(email))
               throw { msg : "Please Enter valid Email id" , elem : "#forgotPassWordEmail"}
           
                   
