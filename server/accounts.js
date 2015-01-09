@@ -96,6 +96,36 @@ Meteor.methods({
                   password: formData.password
                   });
     },
+    redirectToFreshdesk: function(){
+      if(this.userId) {
+        var user = Meteor.users.findOne(this.userId);
+        var username,email = '';
+        //var user is the same info as would be given in Meteor.user();
+        
+        if (user.emails && user.emails[0] && user.emails[0].address){
+          email =  user.emails[0].address;
+          name = user.emails[0].address.split('@')[0];
+        }
+        else if (user.services.facebook && user.services.facebook.name ){
+          name = user.services.facebook.name;
+          email =  user.services.facebook.email;
+        }
+        if (user.services.google && user.services.google.name ){
+          name = user.services.google.name ;
+          email = user.services.google.email ;
+        }
+        var utctime = Math.floor((new Date()).getTime()/1000 );
+        //Generating Hash
+        var crypto = Npm.require('crypto');
+        var message = name+email+utctime;
+        
+        var redirect_url='https://mapzeal.freshdesk.com/login/sso?name='+name+"&email="+email+"&utctime"+utctime+"&hash="+crypto.createHmac('md5', '8df09b222f2f89c80656e89458ab4557').update(message).digest('base64');
+                return redirect_url;
+    }
+      
+    
+      
+    }
     
 
 

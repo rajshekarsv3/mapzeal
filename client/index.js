@@ -21,10 +21,26 @@
       Meteor.loginWithPassword(username,password,function(err){
         if(err)
           alert(err['reason']+' Please try again');
-        else
+        else{
           Router.go('/');
+
+        }
         
       });
+     
+      if(Session.get('host_url'))
+       { Meteor.call('redirectToFreshdesk',function(error,result){
+                 if(error){
+                   alert('something Wrong Please try again');
+                   console.log(error);
+       
+                 }else
+                 {
+                    window.location.href = result;
+                    console.log(result); 
+                 }
+               });}
+
     },
     
   });
@@ -43,6 +59,8 @@
         return user.emails[0].address;
       if (user.services.facebook && user.services.facebook.name )
         return user.services.facebook.name 
+      if (user.services.google && user.services.google.name )
+          return user.services.google.name 
 
       return '';
     }
@@ -224,6 +242,9 @@ Router.route('/teach', function () {
 
 
 Router.route('/login', function () {
+  if(this.params['query'].host_url)
+    Session.set('host_url',this.params['query'].host_url);
+ 
   this.render('login');
 });
 
@@ -378,7 +399,7 @@ Template.resetPassword.events({
             setTimeout(function(){$(e.elem).focus()},0);
             return;
         }
-        console.log(Session.get('_resetPasswordToken'));
+        
 
       Accounts.resetPassword(Session.get('_resetPasswordToken'), password, function(err) {
         if (err) {
