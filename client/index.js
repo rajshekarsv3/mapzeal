@@ -23,12 +23,7 @@
           alert(err['reason']+' Please try again');
         else{
           Router.go('/');
-
-        }
-        
-      });
-     
-      if(Session.get('host_url'))
+           if(Session.get('host_url'))
        { Meteor.call('redirectToFreshdesk',function(error,result){
                  if(error){
                    alert('something Wrong Please try again');
@@ -36,10 +31,17 @@
        
                  }else
                  {
+                    alert(result);
                     window.location.href = result;
                     console.log(result); 
                  }
                });}
+
+        }
+        
+      });
+     
+     
 
     },
     
@@ -167,7 +169,7 @@
   });*/
   Template.userRightBar.events({
     'click #btn_logout': function () {
-      Meteor.logout();
+      Router.go('/logout')
       
     }
   });
@@ -187,6 +189,22 @@
         function (error) {
             if (error) {
                 return console.log(error);
+            }
+            else
+            {
+               if(Session.get('host_url'))
+       { Meteor.call('redirectToFreshdesk',function(error,result){
+                 if(error){
+                   alert('something Wrong Please try again');
+                   console.log(error);
+       
+                 }else
+                 {
+                    alert(result);
+                    window.location.href = result;
+                    console.log(result); 
+                 }
+               });}
             }
         });
     }
@@ -240,6 +258,11 @@ Router.route('/teach', function () {
   this.render('teach');
 });
 
+Router.route('/logout', function(){
+  Meteor.logout();
+  Router.go('/');
+})
+
 
 Router.route('/login', function () {
   if(this.params['query'].host_url)
@@ -255,6 +278,12 @@ Router.route('/signup', function () {
 Router.route('/forgotPassword', function () {
   this.render('forgotPassword');
 });
+
+
+Router.route('/behindseasons', function () {
+  this.render('behindseasons');
+});
+
 
 Router.route('/resetPassword/:_token', function () {
  

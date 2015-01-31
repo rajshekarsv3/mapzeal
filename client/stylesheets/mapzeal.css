@@ -1,0 +1,281 @@
+
+@font-face {
+	font-family: varela_round;
+    src: url(/css/VarelaRound-Regular.ttf);
+}
+
+body
+{
+	font-family: varela_round;
+}
+
+.heading-image
+{
+	position: absolute;
+	top:10%;
+	color: black;
+	left:15%;
+}
+.heading-image 
+
+h1
+{
+	color: black;
+}
+.learn-teach-interactive-content,.forgot-pwd
+{
+	height:400px;
+	width: 100%;
+	background-color: white;
+	display: table;
+}
+.home-top
+{
+	margin-top:1em;
+}
+
+.global-background
+{
+	background-color: white;
+}
+.heading
+{
+	padding: 20px;
+}
+
+input[type="text"]:focus, textarea:focus
+{
+	border: 1px solid #3A71A3;
+	box-shadow: 0 0 5px #3A71A3;
+}
+
+fieldset input[type="text"]:focus,input[type="password"]:focus, textarea:focus
+{
+
+	border: 1px solid #3A71A3;
+	box-shadow: 0 0 5px white;
+}
+
+.right
+{
+	float: right;
+}
+.top-margin
+{
+	margin-top: 20px;
+}
+.top-margin-menu
+{
+	padding-top: 120px;
+}
+.left-margin
+{
+	padding-left: 40px;
+}
+div .author-name
+{
+	text-align: center;
+	padding-top: 5px;
+}
+
+.center
+{
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.bottom
+{
+	margin-bottom: 30px;
+}
+
+#menu-list
+{
+margin-top: 20px;
+margin-right: 20px;
+}
+
+#menu-list li a,#menu-list-mob li a
+{
+	font-size: 10pt;
+	color: black;
+	font-family: varela_round;
+	text-transform: uppercase;
+	font-weight: normal;
+	padding-left: 25px;
+    padding-right: 25px;
+}
+
+#menu-list li a:hover,#menu-list-mob li a:hover
+{
+	color:rgb(11, 152, 93);
+}
+
+#menu-list li .login,#menu-list-mob li .login
+{
+color: white;
+}
+
+#learn-menu,#teach-menu
+{
+	display: initial;
+	border-right: 2px solid black;    
+    height: 10px;
+    vertical-align: middle;
+}
+
+#menu-list li:hover>#learn-menu,#teach-menu
+{
+	background-color: white;
+}
+
+#menu-list-mob li:hover>#learn-menu,#teach-menu
+{
+	background-color: white;
+}
+
+#menu-list-mob li
+{
+	text-align: center;
+}
+
+.top-bar-section ul li
+{
+	background:white;
+}
+
+.no-right-pad
+{
+	padding-right: 0;
+}
+
+.block
+{
+	display: block;
+	border-radius: 5px;
+	border:2px solid white;
+	padding:5px 0px 0px 10px;
+	height:40px;
+}
+
+.span-pad
+{
+	padding: 8px;
+}
+
+.row-pad
+{
+	padding: 3px;
+}
+
+.border-bottom
+{
+	border-bottom: 2px solid white;
+}
+
+.no-pad
+{
+	padding: 0;
+	margin-top: 50px;
+}
+
+.no-right-pad
+{
+	padding-right: 0;
+}
+
+.image-tile
+{
+height:70px;
+width: 70px
+}
+
+.no-pad-margin
+{
+	padding: 0;
+	margin: 0;
+}
+
+.footer-logo-icon
+{
+	float: right;
+}
+
+.no-l-r-pad-mar
+{
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.no-r-pad-mar
+{
+	padding-right: 0;
+	margin-right: 0;
+}
+
+.no-l-pad-mar
+{
+	padding-left: 0;
+	margin-left: 0
+}
+
+.image-tile-size
+{
+	height:60px;
+ width: 60px
+}
+
+.review-bg-color,.about-bg-bolor
+{
+	background-color: rgb(242, 242, 242);
+}
+
+.no-l-h
+{
+	line-height: 0
+}
+
+.fb-float
+{
+	float: right;
+}
+
+.gp-float
+{
+	float: left;
+}
+
+.align-center
+{
+	text-align: center;
+}
+
+.top-border
+{
+	border-top: 2px solid rgb(234, 230, 230);
+}
+
+.bottom-border
+{
+	border-bottom: 2px solid rgb(234, 230, 230);
+}
+
+.right-border
+{
+	border-right: 2px solid rgb(234, 230, 230);
+}
+
+/*
+
+Fonts Used: varela_round (google web font)
+
+Body: 3.5pt
+Body Header: 3.8 (Caps) 
+Spec: 4pt
+Footer Header: 3.5 (Caps)
+Footer Body: 3.2 
+Footer Side Headding: 8pt
+*/

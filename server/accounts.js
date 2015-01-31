@@ -118,8 +118,9 @@ Meteor.methods({
         //Generating Hash
         var crypto = Npm.require('crypto');
         var message = name+email+utctime;
+        email =  encodeURIComponent(email);
         
-        var redirect_url='https://mapzeal.freshdesk.com/login/sso?name='+name+"&email="+email+"&utctime"+utctime+"&hash="+crypto.createHmac('md5', '8df09b222f2f89c80656e89458ab4557').update(message).digest('base64');
+        var redirect_url='https://mapzeal.freshdesk.com/login/sso?name='+name+"&email="+email+"&timestamp="+utctime+"&hash="+crypto.createHmac('md5','8df09b222f2f89c80656e89458ab4557').update(message).digest('base64');
                 return redirect_url;
     }
       
