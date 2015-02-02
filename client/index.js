@@ -325,6 +325,10 @@ Router.route('/404Error', function () {
   this.render('404Error');
 });
 
+Router.route('/test', function () {
+  this.render('test');
+});
+
 Router.configure({
     
     notFoundTemplate: '404Error',
