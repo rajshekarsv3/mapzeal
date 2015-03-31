@@ -175,29 +175,9 @@
   });
 
 Meteor.startup(function(){
-
-
-  
-
-  
-  $(document).ready(function(){
-    console.log("hi");
-    console.log($('.top-bar-logo').text());
-    $(document).foundation();
-    $('.top-bar-logo').click(function(){
-      console.log("hi");
-    alert('hi');
-    });
-  });
-
   reCAPTCHA.config({
         publickey: '6LeZpP8SAAAAAL2Bv-uQAz9azAcdsV8wlnNpbCCE'
     });
-
-  
-  
-
-
 });
 
 
