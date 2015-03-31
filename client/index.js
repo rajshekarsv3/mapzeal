@@ -3,7 +3,7 @@
   
 
 
-
+  var email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 
   Template.home.helpers({
@@ -21,10 +21,28 @@
       Meteor.loginWithPassword(username,password,function(err){
         if(err)
           alert(err['reason']+' Please try again');
-        else
+        else{
           Router.go('/');
+           if(Session.get('host_url'))
+       { Meteor.call('redirectToFreshdesk',function(error,result){
+                 if(error){
+                   alert('something Wrong Please try again');
+                   console.log(error);
+       
+                 }else
+                 {
+                    alert(result);
+                    window.location.href = result;
+                    console.log(result); 
+                 }
+               });}
+
+        }
         
       });
+     
+     
+
     },
     
   });
@@ -43,6 +61,8 @@
         return user.emails[0].address;
       if (user.services.facebook && user.services.facebook.name )
         return user.services.facebook.name 
+      if (user.services.google && user.services.google.name )
+          return user.services.google.name 
 
       return '';
     }
@@ -62,13 +82,13 @@
     'click #btn_sign_up': function(){
       // Validation
 
-       var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+       
        
 
 
        try{
                
-                if( ! $("#sign_up_email").val() || ! regex.test($('#sign_up_email').val()))
+                if( ! $("#sign_up_email").val() || ! email_regex.test($('#sign_up_email').val()))
                     throw { msg : "Please Enter valid Email id" , elem : "#sign_up_email"}
                 if( ! $("#sign_up_password").val())
                     throw { msg : "Password cannot be empty" , elem : "#sign_up_password"}
@@ -149,7 +169,7 @@
   });*/
   Template.userRightBar.events({
     'click #btn_logout': function () {
-      Meteor.logout();
+      Router.go('/logout')
       
     }
   });
@@ -169,6 +189,22 @@
         function (error) {
             if (error) {
                 return console.log(error);
+            }
+            else
+            {
+               if(Session.get('host_url'))
+       { Meteor.call('redirectToFreshdesk',function(error,result){
+                 if(error){
+                   alert('something Wrong Please try again');
+                   console.log(error);
+       
+                 }else
+                 {
+                    alert(result);
+                    window.location.href = result;
+                    console.log(result); 
+                 }
+               });}
             }
         });
     }
@@ -202,8 +238,16 @@ Router.route('/teach', function () {
   this.render('teach');
 });
 
+Router.route('/logout', function(){
+  Meteor.logout();
+  Router.go('/');
+})
+
 
 Router.route('/login', function () {
+  if(this.params['query'].host_url)
+    Session.set('host_url',this.params['query'].host_url);
+ 
   this.render('login');
 });
 
@@ -214,6 +258,12 @@ Router.route('/signup', function () {
 Router.route('/forgotPassword', function () {
   this.render('forgotPassword');
 });
+
+
+Router.route('/behindseasons', function () {
+  this.render('behindseasons');
+});
+
 
 Router.route('/resetPassword/:_token', function () {
  
@@ -255,6 +305,10 @@ Router.route('/404Error', function () {
   this.render('404Error');
 });
 
+Router.route('/test', function () {
+  this.render('test');
+});
+
 Router.configure({
     
     notFoundTemplate: '404Error',
@@ -285,14 +339,14 @@ Template.index_content.created = function() {
 
 Template.forgotPassword.events({
   'click #btn_send_recovery_link': function(e, t) {
-    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    
     e.preventDefault();
  
     var email = $.trim($('#forgotPassWordEmail').val().toLowerCase());
     
      try{
          
-          if( ! email || ! regex.test(email))
+          if( ! email || ! email_regex.test(email))
               throw { msg : "Please Enter valid Email id" , elem : "#forgotPassWordEmail"}
           
                   
@@ -358,7 +412,7 @@ Template.resetPassword.events({
             setTimeout(function(){$(e.elem).focus()},0);
             return;
         }
-        console.log(Session.get('_resetPasswordToken'));
+        
 
       Accounts.resetPassword(Session.get('_resetPasswordToken'), password, function(err) {
         if (err) {
