@@ -1,0 +1,45 @@
+
+<head>
+<meta charset=utf-8 />
+<title>A simple map</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:50px; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+	<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoicmFqc2hla2Fyc3YzIiwiYSI6IjdVdzdkNzgifQ.rrOWGlfdJLu6zPw-kDir3g';
+var map = L.mapbox.map('map', 'rajshekarsv3.j6ekoioh')
+    .setView([13, 80], 9);
+
+document.getElementById('1').addEventListener('click',function(){
+	map.setView([13, 80], 5);
+	setTimeout(function(){map.setView([12.732614, 77.83092399999998], 15) }, 1000);
+	
+})
+document.getElementById('2').addEventListener('click',function(){
+	map.setView([12.732614, 77.83092399999998], 5)
+	setTimeout(function(){map.setView([12.720181,77.86881900000003],15)}, 1000);
+})
+document.getElementById('3').addEventListener('click',function(){
+	
+	map.setView([12.720181,77.86881900000003],5)
+	setTimeout(function(){map.setView([12.736672,78.68688700000001],15)},1000);
+
+})
+</script>
+</body>
+
+<template name="map">
+<div id='map'></div>
+<div id="buttons">
+	<button id='1'>First</button>
+	<button id='2'>Second</button>
+	<button id='3'>Third</button>
+</div>
+</template>
+

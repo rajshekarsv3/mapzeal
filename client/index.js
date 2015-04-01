@@ -230,8 +230,8 @@ Router.route('/', function () {
      this.render('index_content');
  });
 
-Router.route('/learn', function () {
-  this.render('learn');
+Router.route('/map_test', function () {
+  this.render('map');
 });
 
 Router.route('/teach', function () {
