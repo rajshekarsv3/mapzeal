@@ -16,4 +16,5 @@ service-configuration
 zurb-foundation
 altapp:recaptcha
 email
+pauloborges:mapbox@2.1.4_3
 

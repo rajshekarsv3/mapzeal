@@ -211,6 +211,7 @@
   });
 
 Meteor.startup(function(){
+  Mapbox.load();
   reCAPTCHA.config({
         publickey: '6LeZpP8SAAAAAL2Bv-uQAz9azAcdsV8wlnNpbCCE'
     });
