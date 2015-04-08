@@ -1,13 +1,13 @@
 <template name="map">
 
 <style>
-  body { margin:0; padding:0; }
   #map { position:absolute; top:90px; bottom:0; width:100%; }
   .event h1,h2,h3,h4,h5,h6{color:yellow;}
-  .event p,span{color: white;}
+  .event p,span{color: white;font-size: 15px;}
   footer{display:none;}
   .event{background-color: rgba(106, 103, 103, 0.64);width:100%;position: absolute;bottom: 0;}
-  .year-sq{height:5vw;width:5vw ;border-radius: 4px;background-color: rgb(213, 213, 213);}
+  .year-sq{height:4vw;width:4vw ;border-radius: 4px;background-color: rgb(213, 213, 213);}
+  .desc-sq{height:10vw;width:40vw ;border-radius: 4px;background-color: rgb(213, 213, 213);}
   .events-year-list{list-style-type: none}
   .events-year-list li{display: inline;float: left;padding: 15px;text-align:center;}  
   .event p{margin: 1.4em 0 0;}
@@ -15,31 +15,53 @@
 	-moz-box-shadow: 0 0 20px rgb(244, 195, 66); 
 	box-shadow:0 0 20px rgb(244, 195, 66);
 transition: all ease 0.3s;
+    -moz-transition: all ease 0.2s;
+    -webkit-transition: all ease 0.2s;
+    -o-transition: all ease 0.2s;
+    -ms-transition: all ease 0.2s;}
+    .up-arrow{text-align: center;}
+    .up-arrow img{height: 20%;width: 20%;}
+    #description
+    {
+    	display: none;
+    }
+    .rotate-arrow{
+    	-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
     -moz-transition: all ease 0.3s;
     -webkit-transition: all ease 0.3s;
     -o-transition: all ease 0.3s;
-    -ms-transition: all ease 0.3s;}
-    .up-arrow{text-align: center;}
-    .up-arrow img{height: 20%;width: 20%;}
+    -ms-transition: all ease 0.3s;
+	}
+	.remove-rotate-arrow{
+    	-ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+    -moz-transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+	}
 </style>
-
-
 
 <div id='map' class="large-12 columns" ></div>
 <div class="large-12 medium-12 small-12 columns event no-pad-margin">
 	<div class="large-12 columns">
 		<div class="large-3 medium-3 small-3 columns large-centered small-centered medium-centered up-arrow">
-			<img src="/images/up-arrow.png">
+			<img id="up-arrow" src="/images/up-arrow.png">
 		</div>
 	</div>
-	<div class="large-11 medium-11 small-11 columns arge-centered small-centered medium-centered">
+	<div class="large-12 medium-12 small-12 columns">
+	<div class="large-10 medium-10 small-10 columns arge-centered small-centered medium-centered">		
 		<div class="large-2 medium-2 small-2 columns">
-			<h1>British Raj</h1>		
-			<h4>1949-1959</h4>
+			<h3>British Raj</h3>		
+			<h5>1949-1959</h5>
 		</div>
 		<div class="large-10 medium-10 small-10 columns">
 			<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 		</div>
+	</div>
 	</div>
 	<div class="large-12 medium-12 small-12 columns">
 		<div class="large-10 medium-10 small-10 arge-centered small-centered medium-centered columns">
@@ -52,6 +74,19 @@ transition: all ease 0.3s;
 				<li><span>1954</span><div class="year-sq"></div></li>
 				<li><span>1955</span><div class="year-sq"></div></li>
 			</ul>
+		</div>
+		<div class="large-12 medium-12 small-12 columns" id="description">
+		<div class="large-10 medium-10 small-10 arge-centered small-centered medium-centered columns">
+			<h3>1951 - The Lorenm Ipsum Treaty</h3>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown </p>
+			<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>	
+			<div class="large-6 columns">
+				<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			</div>
+			<div class="large-6 columns">
+				<div class="desc-sq"></div>
+			</div>
+		</div>		
 		</div>
 	</div>
 </div>

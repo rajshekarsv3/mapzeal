@@ -22,3 +22,20 @@ document.getElementById('3').addEventListener('click',function(){
 }
 });
 
+
+
+Template.map.events({
+       'click #up-arrow': function(){       
+       	if(!$("#up-arrow").hasClass("rotate-arrow"))
+       	{
+       		$("#description").show("slow");
+       		$("#up-arrow").removeClass("remove-rotate-arrow").addClass("rotate-arrow");
+        }
+        else
+        {
+        	$("#description").hide("slow");
+        	$("#up-arrow").removeClass("rotate-arrow").addClass("remove-rotate-arrow");
+        }
+       }
+    });
+
