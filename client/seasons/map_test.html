@@ -5,7 +5,7 @@
   .event h1,h2,h3,h4,h5,h6{color:yellow;}
   .event p,span{color: white;font-size: 15px;}
   footer{display:none;}
-  .event{background-color: rgba(106, 103, 103, 0.64);width:100%;position: absolute;bottom: 0;}
+  .event{background-color: rgba(106, 103, 103, 0.64);width:100%;position: relative;}  
   .year-sq{height:4vw;width:4vw ;border-radius: 4px;background-color: rgb(213, 213, 213);}
   .desc-sq{height:10vw;width:40vw ;border-radius: 4px;background-color: rgb(213, 213, 213);}
   .events-year-list{list-style-type: none}
@@ -43,9 +43,20 @@ transition: all ease 0.3s;
     -o-transition: all ease 0.3s;
     -ms-transition: all ease 0.3s;
 	}
+
+	#cover
+	{
+		-moz-transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+		position: absolute;
+		bottom: 0;
+	}
 </style>
 
 <div id='map' class="large-12 columns" ></div>
+<div id="cover">
 <div class="large-12 medium-12 small-12 columns event no-pad-margin">
 	<div class="large-12 columns">
 		<div class="large-3 medium-3 small-3 columns large-centered small-centered medium-centered up-arrow">
@@ -54,11 +65,11 @@ transition: all ease 0.3s;
 	</div>
 	<div class="large-12 medium-12 small-12 columns">
 	<div class="large-10 medium-10 small-10 columns arge-centered small-centered medium-centered">		
-		<div class="large-2 medium-2 small-2 columns">
+		<div class="large-2 medium-3 small-3 columns">
 			<h3>British Raj</h3>		
 			<h5>1949-1959</h5>
 		</div>
-		<div class="large-10 medium-10 small-10 columns">
+		<div class="large-10 medium-9 small-9 columns">
 			<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 		</div>
 	</div>
@@ -89,6 +100,7 @@ transition: all ease 0.3s;
 		</div>		
 		</div>
 	</div>
+</div>
 </div>
 </template>
 

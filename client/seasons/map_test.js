@@ -30,11 +30,17 @@ Template.map.events({
        	{
        		$("#description").show("slow");
        		$("#up-arrow").removeClass("remove-rotate-arrow").addClass("rotate-arrow");
+          setTimeout(function(){
+              $('#cover').css("position","relative");
+          },250);
         }
         else
         {
         	$("#description").hide("slow");
         	$("#up-arrow").removeClass("rotate-arrow").addClass("remove-rotate-arrow");
+          setTimeout(function(){
+              $('#cover').css("position","absolute");
+          },300);
         }
        }
     });
